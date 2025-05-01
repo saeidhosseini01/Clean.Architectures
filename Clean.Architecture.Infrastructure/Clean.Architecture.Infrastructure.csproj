@@ -12,4 +12,9 @@
     <Folder Include="Services\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Clean.Architecture.Application\Clean.Architecture.Application.csproj" />
+    <ProjectReference Include="..\Clean.Architecture\Clean.Architecture.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

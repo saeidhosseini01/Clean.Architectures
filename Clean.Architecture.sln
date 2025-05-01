@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clean.Architecture.Applicat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clean.Architecture.Infrastructure", "Clean.Architecture.Infrastructure\Clean.Architecture.Infrastructure.csproj", "{531EEB3F-215A-4018-A027-DA11B2190489}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence", "Persistance\Persistence.csproj", "{2EFA451B-96F6-4E7C-A36F-27A5C2976EF4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clean.Architecture.Persistence", "Persistance\Clean.Architecture.Persistence.csproj", "{2EFA451B-96F6-4E7C-A36F-27A5C2976EF4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clean.Architecture.Presentation", "Clean.Architecture.UI\Clean.Architecture.Presentation.csproj", "{7D1AA4CF-55B6-4232-8963-D4EE745B6DFF}"
 EndProject
