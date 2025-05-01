@@ -6,4 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="DbContext\" />
+    <Folder Include="API\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+
 </Project>
