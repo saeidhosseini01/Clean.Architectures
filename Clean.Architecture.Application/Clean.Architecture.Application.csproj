@@ -7,6 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Common\" />
+    <Folder Include="TodoLists\" />
+    <Folder Include="TodoItems\" />
     <Folder Include="Usecase\" />
     <Folder Include="Services\" />
   </ItemGroup>
