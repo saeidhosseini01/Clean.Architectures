@@ -1,15 +1,15 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="BackGroundJob\" />
-    <Folder Include="Data\" />
-    <Folder Include="Services\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="MiddelWares\" />
+    <Folder Include="ViewModel\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -7,11 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Common\" />
-    <Folder Include="TodoLists\" />
-    <Folder Include="TodoItems\" />
+    <Folder Include="Abstraction\Email\" />
+    <Folder Include="Abstraction\Data\" />
+    <Folder Include="Contracts\" />
+    <Folder Include="Usecase\Todo\Queries\" />
+    <Folder Include="Usecase\Todo\Events\" />
+    <Folder Include="Usecase\Todo\Commands\" />
     <Folder Include="Usecase\" />
-    <Folder Include="Services\" />
+    <Folder Include="Behaviors\" />
   </ItemGroup>
 
   <ItemGroup>

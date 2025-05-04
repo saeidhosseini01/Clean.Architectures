@@ -10,4 +10,10 @@
     <ProjectReference Include="..\Clean.Architecture.Application\Clean.Architecture.Application.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="MiddelWares\" />
+    <Folder Include="ViewModel\" />
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
 </Project>
