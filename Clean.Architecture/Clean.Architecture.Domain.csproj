@@ -8,11 +8,9 @@
 
   <ItemGroup>
     <Folder Include="Repositories\" />
-    <Folder Include="Entities\" />
+    <Folder Include="Enums\" />
     <Folder Include="Shared\" />
     <Folder Include="DomainEvents\" />
-    <Folder Include="Exeptions\" />
-    <Folder Include="ValueObject\" />
   </ItemGroup>
 
 </Project>
