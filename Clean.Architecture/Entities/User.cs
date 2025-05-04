@@ -12,6 +12,6 @@ namespace Clean.Architecture.Domain.Entities
         public string Id { get; set; }
         public string Name { get; set; }
         public string family { get; set; }
-        public int? Age { get; set; }
+        public double Age { get; set; }
     }
 }
