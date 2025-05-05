@@ -31,8 +31,8 @@ namespace Clean.Architecture.Infrastructure.Repositories
         public Task<List<User>> GetAllUserAsync(CancellationToken cancellationToken)
         => _context.User.ToListAsync(cancellationToken);
 
-        public async Task<User> GetUserByIdAsync(string id, CancellationToken cancellationToken)
-        => _context.User.FindAsync(id, cancellationToken);
+        public async Task<User?> GetUserByIdAsync(string id, CancellationToken cancellationToken)
+        => _context.User.FindAsync(id, cancellationToken).AsTask().Result;
 
         public async Task UpdateUserAsync(User user, CancellationToken cancellationToken)
         {

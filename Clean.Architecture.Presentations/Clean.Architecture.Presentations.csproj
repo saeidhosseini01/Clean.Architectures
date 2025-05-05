@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
     <Folder Include="MiddelWares\" />
     <Folder Include="ViewModel\" />
   </ItemGroup>
