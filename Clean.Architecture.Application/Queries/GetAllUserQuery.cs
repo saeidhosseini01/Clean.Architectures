@@ -10,6 +10,6 @@ namespace Clean.Architecture.Application.Queries
 {
 
 
-    public class GetAllUserQuery:IRequest<IEnumerable<UserDto>>;
+    public class GetAllUserQuery:IRequest<List<UserDto>>;
     
 }

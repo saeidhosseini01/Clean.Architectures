@@ -5,7 +5,7 @@ using Clean.Architecture.Domain.Entities;
 using Clean.Architecture.Domain.Interfaces;
 using MediatR;
 
-namespace Clean.Architecture.Application.Handlers
+namespace Clean.Architecture.Application.Handlers.CommandHandler
 {
     public class UpdateUserCommandHandler(IUserRepository userRepository, IMapper mapper)
         : IRequestHandler<UpdateUserCommand, UserDto>
@@ -18,11 +18,11 @@ namespace Clean.Architecture.Application.Handlers
                 family = request.Family,
                 Id = request.Id,
                 Name = request.Name,
-            },cancellationToken );
-            var user=await userRepository.GetUserByIdAsync(request.Id,cancellationToken);
+            }, cancellationToken);
+            var user = await userRepository.GetUserByIdAsync(request.Id, cancellationToken);
             return mapper.Map<UserDto>(user);
 
-           
+
         }
     }
 }
