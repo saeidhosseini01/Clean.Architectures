@@ -6,6 +6,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 
 
+
+
+builder.Services.AddAutoMapper();
+
 builder.Services.AddMediatR(cfg =>
 {
     cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());

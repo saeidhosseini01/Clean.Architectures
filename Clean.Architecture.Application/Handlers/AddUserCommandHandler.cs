@@ -14,9 +14,17 @@ namespace Clean.Architecture.Application.Handlers
 {
 
 
-    public class AddUserCommandHandler(IUserRepository userRepository, IMapper mapper)
+    public class AddUserCommandHandler
         : IRequestHandler<AddUserCommand, UserDto>
     {
+        private readonly IUserRepository userRepository;
+        private readonly IMapper mapper;
+
+        public AddUserCommandHandler(IUserRepository userRepository, IMapper mapper)
+        {
+            this.userRepository = userRepository;
+            this.mapper = mapper;
+        }
         public async Task<UserDto> Handle(AddUserCommand request, CancellationToken cancellationToken)
         {
             var user = new User
@@ -30,25 +38,6 @@ namespace Clean.Architecture.Application.Handlers
 
             await userRepository.AddUserAsync(user, cancellationToken);
             return mapper.Map<UserDto>(user);
-        }
-    }
-
-    public class UpdateUserCommandHandler(IUserRepository userRepository, IMapper mapper)
-        : IRequestHandler<UpdateUserCommand, UserDto>
-    {
-        public async Task<UserDto> Handle(UpdateUserCommand request, CancellationToken cancellationToken)
-        {
-            await userRepository.UpdateUserAsync(new User
-            {
-                Age = request.Age,
-                family = request.Family,
-                Id = request.Id,
-                Name = request.Name,
-            },cancellationToken );
-            var user=await userRepository.GetUserByIdAsync(request.Id,cancellationToken);
-            return mapper.Map<UserDto>(user);
-
-           
         }
     }
 }
