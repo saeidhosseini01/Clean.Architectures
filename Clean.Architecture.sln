@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clean.Architecture.Infrastr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clean.Architecture.Persistence", "Persistance\Clean.Architecture.Persistence.csproj", "{2EFA451B-96F6-4E7C-A36F-27A5C2976EF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clean.Architecture.Presentations", "Clean.Architecture.Presentations\Clean.Architecture.Presentations.csproj", "{4853EB87-AEC1-4AFC-9612-7A3F0E9ADC64}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clean.Architecture.WebApi", "Clean.Architecture.Presentations\Clean.Architecture.WebApi.csproj", "{4853EB87-AEC1-4AFC-9612-7A3F0E9ADC64}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
