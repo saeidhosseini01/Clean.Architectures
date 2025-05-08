@@ -16,9 +16,9 @@ namespace Clean.Architecture.Infrastructure.Repositories
 
     public class UserRepository : IUserRepository
     {
-        private readonly ApiDbContext _context;
+        private readonly ApiDbContexts _context;
 
-        public UserRepository(ApiDbContext context)
+        public UserRepository(ApiDbContexts context)
         {
           _context = context;
         }

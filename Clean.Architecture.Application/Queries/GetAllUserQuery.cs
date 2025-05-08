@@ -11,5 +11,14 @@ namespace Clean.Architecture.Application.Queries
 
 
     public class GetAllUserQuery:IRequest<List<UserDto>>;
+    public class GetUserByIdGuery : IRequest<UserDto>
+    {
+        public readonly string id;
+
+        public GetUserByIdGuery(string id)
+        {
+            this.id = id;
+        }
+    }
     
 }

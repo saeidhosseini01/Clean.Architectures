@@ -1,3 +1,4 @@
+using Clean.Architecture.Application.Handlers.QuerisHandler;
 using Clean.Architecture.Application.Mappings;
 using Clean.Architecture.Domain.Interfaces;
 using Clean.Architecture.Infrastructure.Repositories;
@@ -5,6 +6,7 @@ using Clean.Architecture.Persistence.ApiDbContext;
 using Clean.Architecture.WebApi.EndPoint;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -28,14 +30,13 @@ void ConfigureServices(IServiceCollection services, IConfiguration configuration
 {
     services.AddControllers();
     services.AddAutoMapper(typeof(MappingsProfile));
-
-    services.AddMediatR(cfg =>
-        cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
-
+    builder.Services.AddMediatR(cfg =>
+     cfg.RegisterServicesFromAssembly(typeof(GetAllUsersQueryHandler).Assembly)
+ );
     services.AddScoped<IUserRepository, UserRepository>();
 
-    services.AddDbContext<ApiDbContext>(options =>
-        options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+    services.AddDbContext<ApiDbContexts>(options =>
+        options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),sqlpots=>sqlpots.EnableRetryOnFailure()));
 }
 
 void ConfigureMiddleware(WebApplication app)
