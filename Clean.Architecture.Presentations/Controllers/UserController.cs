@@ -16,14 +16,14 @@ namespace Clean.Architecture.Presentations.Controllers
     {
         private readonly IMediator mediator;
         private readonly ILogger<UserController> logger;
-
+        
         public UserController(IMediator mediator,ILogger<UserController> logger)
         {
             this.mediator = mediator;
             this.logger = logger;
         }
 
-
+        [HttpGet]
         public async Task<ActionResult<UserDto>> GetAllUsers(CancellationToken cancellationToken)
         {
             var query=new GetAllUserQuery();
