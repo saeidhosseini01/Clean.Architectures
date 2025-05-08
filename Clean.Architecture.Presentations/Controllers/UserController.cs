@@ -3,6 +3,7 @@ using Clean.Architecture.Application.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace Clean.Architecture.Presentations.Controllers
 {
@@ -23,13 +24,20 @@ namespace Clean.Architecture.Presentations.Controllers
             this.logger = logger;
         }
 
-        [HttpGet]
-        public async Task<ActionResult<UserDto>> GetAllUsers(CancellationToken cancellationToken)
+        [HttpGet("GetAllUsers")]
+        public async Task<ActionResult<List<UserDto>>> GetAllUsers(CancellationToken cancellationToken)
         {
             var query=new GetAllUserQuery();
             var user = await mediator.Send(query, cancellationToken);
             logger.LogInformation("sd");
             return Ok(user);
         }
-    }
+        [HttpGet("GetById")]
+        public async Task<ActionResult<UserDto>> GetById( CancellationToken cancellationToken)
+        {
+            var querq = new GetUserByIdGuery("1");
+            var user=await mediator.Send(querq, cancellationToken);
+            return Ok(user);
+        }
+     }
 }
