@@ -8,6 +8,6 @@ namespace Clean.Architecture.Domain.ValueObject.User
 {
     public record Id(string Value)
     {
-        public static implicit operator String(Id id)=>id.Value;
+        public static implicit operator string(Id id)=>id.Value;
     }
 }
