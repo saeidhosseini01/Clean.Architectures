@@ -36,7 +36,7 @@ void ConfigureServices(IServiceCollection services, IConfiguration configuration
     services.AddScoped<IUserRepository, UserRepository>();
 
     services.AddDbContext<ApiDbContexts>(options =>
-        options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),sqlpots=>sqlpots.EnableRetryOnFailure()));
+        options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),sqlpots=>sqlpots.EnableRetryOnFailure()));
 }
 
 void ConfigureMiddleware(WebApplication app)

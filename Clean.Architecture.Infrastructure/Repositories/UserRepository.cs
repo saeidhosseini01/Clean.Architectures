@@ -28,7 +28,7 @@ namespace Clean.Architecture.Infrastructure.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public Task<List<User>> GetAllUserAsync(CancellationToken cancellationToken)
+        public  Task<List<User>> GetAllUserAsync(CancellationToken cancellationToken)
         => _context.User.ToListAsync(cancellationToken);
 
         public async Task<User?> GetUserByIdAsync(string id, CancellationToken cancellationToken)
