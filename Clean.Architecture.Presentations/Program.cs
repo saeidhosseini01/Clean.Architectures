@@ -37,14 +37,40 @@ void ConfigureServices(IServiceCollection services, IConfiguration configuration
 
     services.AddDbContext<ApiDbContexts>(options =>
         options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),sqlpots=>sqlpots.EnableRetryOnFailure()));
+    services.AddCors(options =>
+    {
+        options.AddDefaultPolicy(builder =>
+        {
+            builder.WithOrigins("http://localhost:4200")
+                   .AllowAnyHeader()
+                   .AllowAnyMethod();
+        });
+    });
+    //services.AddSpaStaticFiles(configuration =>
+    //{
+    //    configuration.RootPath = "ClientApp/dist";
+    //});
+
+
+
 }
 
 void ConfigureMiddleware(WebApplication app)
 {
     app.UseStaticFiles();
+    app.MapFallbackToFile("index.html");
     app.UseStatusCodePages();
     app.UseDeveloperExceptionPage();
+    app.UseCors();
+    //app.UseSpa(spa =>
+    //{
+    //    spa.Options.SourcePath = "ClientApp";
 
-   
+    //    if (app.Environment.IsDevelopment())
+    //    {
+    //        // ?? ???? ?????? ?? ng serve ??? ????
+    //        spa.UseProxyToSpaDevelopmentServer("http://localhost:4200");
+    //    }
+    //});
 
 }
