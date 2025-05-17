@@ -13,6 +13,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clean.Architecture.Persiste
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clean.Architecture.WebApi", "Clean.Architecture.Presentations\Clean.Architecture.WebApi.csproj", "{4853EB87-AEC1-4AFC-9612-7A3F0E9ADC64}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clean.Architecture.EndPoint", "Clean.Architecture.EndPoint", "{C600A41B-90C5-40EC-8BFD-7D2E7DDE94BB}"
+	ProjectSection(SolutionItems) = preProject
+		ClientApp\.editorconfig = ClientApp\.editorconfig
+		ClientApp\.gitignore = ClientApp\.gitignore
+		ClientApp\angular.json = ClientApp\angular.json
+		ClientApp\package-lock.json = ClientApp\package-lock.json
+		ClientApp\package.json = ClientApp\package.json
+		ClientApp\README.md = ClientApp\README.md
+		ClientApp\tsconfig.app.json = ClientApp\tsconfig.app.json
+		ClientApp\tsconfig.json = ClientApp\tsconfig.json
+		ClientApp\tsconfig.spec.json = ClientApp\tsconfig.spec.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
