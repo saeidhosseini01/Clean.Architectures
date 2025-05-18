@@ -1,27 +1,19 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { NgFor } from '@angular/common';
-import { json, text } from 'stream/consumers';
+import { Component, Input } from '@angular/core';
+
+
+import { routes } from './app.routes';
+import { RouterModule } from '@angular/router';
+
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,NgFor],
+  standalone: true,
+  imports: [RouterModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.css'
+  
 })
-export class AppComponent  implements OnInit {
-  users: any[] = [];
-  constructor (private http:HttpClient){};
-  ngOnInit(): void {
-    
-    this.http.get<any[]>('https://localhost:7139/api/user/getAllUsers').subscribe({
-      
-      next:data=> this.users=data,
-      error :err => console.error('api error')
-    })
-  }
-
-
-  title = 'ClientApp';
-}
+export class AppComponent { 
+  
+  
+ }  
