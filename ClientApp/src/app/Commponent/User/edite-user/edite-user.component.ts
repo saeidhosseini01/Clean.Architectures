@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-edite-user',
   imports: [],
   templateUrl: './edite-user.component.html',
-  styleUrl: './edite-user.component.scss'
+  styleUrl: './edite-user.component.css'
 })
 export class EditeUserComponent {
 
