@@ -9,6 +9,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @Component({
+  standalone: true,
   selector: 'app-tooltips',
   imports: [
     MatFormFieldModule,

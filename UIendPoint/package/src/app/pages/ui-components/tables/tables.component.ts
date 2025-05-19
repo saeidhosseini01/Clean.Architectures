@@ -48,6 +48,7 @@ const PRODUCT_DATA: productsData[] = [
 ];
 
 @Component({
+  standalone: true,
   selector: 'app-tables',
   imports: [
     MatTableModule,

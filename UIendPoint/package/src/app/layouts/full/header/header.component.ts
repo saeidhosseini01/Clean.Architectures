@@ -13,6 +13,7 @@ import { NgScrollbarModule } from 'ngx-scrollbar';
 import { BrandingComponent } from '../sidebar/branding.component';
 
 @Component({
+  standalone: true,
   selector: 'app-header',
   imports: [
     RouterModule,

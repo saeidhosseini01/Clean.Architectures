@@ -5,6 +5,7 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { MatCardModule } from '@angular/material/card';
 
 @Component({
+  standalone: true,
   selector: 'app-badge',
   templateUrl: './badge.component.html',
   imports: [MatBadgeModule, MatButtonModule, MatIconModule, MatCardModule],

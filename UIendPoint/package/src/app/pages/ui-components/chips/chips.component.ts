@@ -38,6 +38,7 @@ export interface Vegetable {
 }
 
 @Component({
+  standalone: true,
   selector: 'app-chips',
   templateUrl: './chips.component.html',
   styleUrls: ['./chips.component.scss'],

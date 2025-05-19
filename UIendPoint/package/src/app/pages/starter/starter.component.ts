@@ -9,6 +9,8 @@ import { AppProfileCardComponent } from 'src/app/components/profile-card/profile
 
 
 @Component({
+ 
+  standalone: true,
   selector: 'app-starter',
   imports: [
     MaterialModule,

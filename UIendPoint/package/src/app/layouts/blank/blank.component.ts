@@ -5,6 +5,7 @@ import { RouterOutlet } from '@angular/router';
 import { MaterialModule } from 'src/app/material.module';
 
 @Component({
+  standalone: true,
   selector: 'app-blank',
   templateUrl: './blank.component.html',
   styleUrls: [],

@@ -11,6 +11,7 @@ import { TablerIconsModule } from 'angular-tabler-icons';
 import { MaterialModule } from 'src/app/material.module';
 
 @Component({
+  standalone: true,
   selector: 'app-sidebar',
   imports: [TablerIconsModule, MaterialModule, RouterModule],
   templateUrl: './sidebar.component.html',

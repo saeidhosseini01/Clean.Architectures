@@ -27,6 +27,7 @@ export interface ourvisitorChart {
 }
 
 @Component({
+  standalone: true,
   selector: 'app-our-visitors',
   imports: [NgApexchartsModule, MaterialModule, TablerIconsModule],
   templateUrl: './our-visitors.component.html',

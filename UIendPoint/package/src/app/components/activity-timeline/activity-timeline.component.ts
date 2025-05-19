@@ -3,6 +3,7 @@ import { TablerIconsModule } from 'angular-tabler-icons';
 import { MaterialModule } from 'src/app/material.module';
 
 @Component({
+  standalone: true,
   selector: 'app-activity-timeline',
   imports: [MaterialModule, TablerIconsModule],
   templateUrl: './activity-timeline.component.html',

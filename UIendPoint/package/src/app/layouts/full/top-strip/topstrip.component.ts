@@ -4,6 +4,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { TablerIconsModule } from 'angular-tabler-icons';
 
 @Component({
+  standalone: true,
     selector: 'app-topstrip',
     imports: [TablerIconsModule, MatButtonModule, MatMenuModule],
     templateUrl: './topstrip.component.html',

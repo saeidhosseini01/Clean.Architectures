@@ -34,6 +34,7 @@ export interface salesChart {
 }
 
 @Component({
+  standalone: true,
   selector: 'app-sales-overview',
   imports: [NgApexchartsModule, TablerIconsModule, MaterialModule],
   templateUrl: './sales-overview.component.html',

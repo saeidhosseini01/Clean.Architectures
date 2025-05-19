@@ -9,6 +9,7 @@ interface msgs {
 }
 
 @Component({
+  standalone: true,
   selector: 'app-my-contacts',
   imports: [MaterialModule],
   templateUrl: './my-contacts.component.html',

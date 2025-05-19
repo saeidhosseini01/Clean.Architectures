@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CoreService } from 'src/app/services/core.service';
 
 @Component({
+  standalone: true,
   selector: 'app-branding',
   imports: [],
   template: `

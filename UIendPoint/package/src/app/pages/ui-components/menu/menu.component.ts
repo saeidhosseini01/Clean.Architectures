@@ -6,6 +6,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { TablerIconsModule } from 'angular-tabler-icons';
 
 @Component({
+  standalone: true,
   selector: 'app-menu',
   imports: [MatCardModule, MatMenuModule, MatIconModule, TablerIconsModule, MatButtonModule],
   templateUrl: './menu.component.html',
