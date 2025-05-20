@@ -1,0 +1,156 @@
+/* پایه */
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+body, html {
+  font-family: 'Vazirmatn', Tahoma, sans-serif;
+  direction: rtl;
+  background: #f8f9fa;
+  color: #333;
+}
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* هدر و منو */
+.header {
+  background: #1c3d5a;
+  color: white;
+  padding-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 0;
+}
+.logo {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+.nav-links li a:hover,
+.nav-links li a.active {
+  background-color: #f39c12;
+  color: #fff;
+}
+
+/* بخش هرو */
+.hero {
+  margin-top: 40px;
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 400px;
+}
+.hero-content {
+  max-width: 550px;
+}
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 18px;
+  line-height: 1.2;
+}
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #dcdcdc;
+}
+.hero-content button {
+  background-color: #f39c12;
+  color: white;
+  border: none;
+  padding: 14px 40px;
+  font-size: 1.2rem;
+  border-radius: 35px;
+  cursor: pointer;
+  font-weight: 700;
+  box-shadow: 0 6px 12px rgb(243 156 18 / 0.6);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.hero-content button:hover {
+  background-color: #d17e00;
+  box-shadow: 0 8px 16px rgb(209 126 0 / 0.8);
+}
+
+/* تصویر هرو (می‌تونی تصویر واقعی بذاری) */
+.hero-image {
+  flex: 1;
+  background: url('https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=800&q=80') no-repeat center center/cover;
+  border-radius: 20px;
+  min-height: 350px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* بخش امکانات */
+.features {
+  margin-top: 80px;
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+}
+.feature {
+  background: white;
+  flex: 1 1 280px;
+  padding: 30px 20px;
+  border-radius: 18px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.08);
+  transition: transform 0.3s ease;
+  cursor: default;
+}
+.feature:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgb(0 0 0 / 0.15);
+}
+.icon {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+  color: #f39c12;
+}
+.feature h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #1c3d5a;
+}
+.feature p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* ریسپانسیو */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-image {
+    width: 100%;
+    min-height: 280px;
+  }
+  .features {
+    flex-direction: column;
+    gap: 25px;
+  }
+}
