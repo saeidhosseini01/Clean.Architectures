@@ -1,0 +1,51 @@
+<form [formGroup]="Register" (ngSubmit)="onSubmit()" class="member-form">
+  <h2>فرم ثبت اعضا</h2>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>نام</mat-label>
+    <input matInput formControlName="fname" />
+    <mat-error *ngIf="Register.controls['fname'].hasError('required')">
+      وارد کردن نام الزامی است
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>نام خانوادگی</mat-label>
+    <input matInput formControlName="lname" />
+    <mat-error *ngIf="Register.controls['lname'].hasError('required')">
+      وارد کردن نام خانوادگی الزامی است
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>آدرس</mat-label>
+    <textarea matInput rows="3" formControlName="address"></textarea>
+    <mat-error *ngIf="Register.controls['address'].hasError('required')">
+      وارد کردن آدرس الزامی است
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>تلفن</mat-label>
+    <input matInput formControlName="phone" placeholder="مثال: 09123456789" />
+    <mat-error *ngIf="Register.controls['phone'].hasError('required')">
+      وارد کردن تلفن الزامی است
+    </mat-error>
+    <mat-error *ngIf="Register.controls['phone'].hasError('pattern')">
+      شماره تلفن معتبر نیست
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>سن</mat-label>
+    <input matInput type="number" formControlName="age" min="1" max="120" />
+    <mat-error *ngIf="Register.controls['age'].hasError('required')">
+      وارد کردن سن الزامی است
+    </mat-error>
+    <mat-error *ngIf="Register.controls['age'].hasError('min') || Register.controls['age'].hasError('max')">
+      سن باید بین 1 تا 120 باشد
+    </mat-error>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit">ثبت</button>
+</form>
