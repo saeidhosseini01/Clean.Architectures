@@ -1,22 +1,15 @@
+import { Component, EventEmitter, Output } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
 @Component({
   selector: 'app-register',
-  standalone: true,
-  imports: [
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule
-  ],
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
+  @Output() closeModal = new EventEmitter<void>();
+  @Output() registerSubmit = new EventEmitter<any>();
+
   Register: FormGroup;
 
   constructor(private fb: FormBuilder) {
@@ -31,10 +24,14 @@ export class RegisterComponent {
 
   onSubmit() {
     if (this.Register.valid) {
-      alert('عضو با موفقیت ثبت شد!\n' + JSON.stringify(this.Register.value, null, 2));
-      this.Register.reset();
+      this.registerSubmit.emit(this.Register.value);
+      this.onClose();
     } else {
       this.Register.markAllAsTouched();
     }
+  }
+
+  onClose() {
+    this.closeModal.emit();
   }
 }

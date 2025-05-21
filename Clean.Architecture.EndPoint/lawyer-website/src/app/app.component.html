@@ -1,16 +1,17 @@
 <header class="header">
   <nav class="navbar container">
     <div class="nav-right">
-      <a href="#" class="btn login">ورود</a>
-      <a href="#"  routerLink="/register" class="btn signup">ثبت‌نام</a>
+      <a routerLink="/login" class="btn login">ورود</a>
+      <a (click)="openRegisterDialog()" class="btn signup" style="cursor:pointer;">ثبت‌ نام</a>
+      <a routerLink="/register" class="btn signup">ثبت‌نام</a>
     </div>
     <div class="nav-left">
       <ul class="nav-links">
-        <li><a href="#" class="active">خانه</a></li>
-        <li><a href="#">درباره من</a></li>
-        <li><a href="#">خدمات</a></li>
-        <li><a href="#">مقالات</a></li>
-        <li><a href="#">تماس</a></li>
+        <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">خانه</a></li>
+        <li><a routerLink="/about" routerLinkActive="active">درباره من</a></li>
+        <li><a routerLink="/services" routerLinkActive="active">خدمات</a></li>
+        <li><a routerLink="/articles" routerLinkActive="active">مقالات</a></li>
+        <li><a routerLink="/contact" routerLinkActive="active">تماس</a></li>
       </ul>
     </div>
   </nav>
@@ -19,9 +20,13 @@
     <div class="hero-content">
       <h1>وکالت تخصصی با تجربه بالا</h1>
       <p>حل مشکلات حقوقی شما با دانش و مهارت حرفه‌ای و ارائه بهترین مشاوره‌ها</p>
-      <button onclick="contact()">ارتباط با من</button>
+      <button (click)="scrollToContact()">ارتباط با من</button>
     </div>
     <div class="hero-image"></div>
   </section>
 </header>
- 
+
+<!-- 👇 این بخش محتوای کامپوننت‌های مربوط به مسیر (route) را نمایش می‌دهد -->
+<main class="main-content container">
+  <router-outlet></router-outlet>
+</main>
