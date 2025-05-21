@@ -1,105 +1,89 @@
-/* پس زمینه تار پشت مودال */
+/* بک‌گراند نیمه شفاف کل صفحه وقتی مودال بازه */
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0,0,0,0.3);
-  z-index: 999;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 1000;
 }
 
-/* جعبه مودال وسط صفحه */
+/* کانتینر مودال */
 .modal-container {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  background: #fff;
+  width: 420px;
+  max-width: 95vw;
+  max-height: 90vh;
+  overflow-y: auto;
+  background-color: #fff;
   padding: 1.5rem 2rem;
-  border-radius: 8px;
-  width: 90%;
-  max-width: 400px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  z-index: 1000;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+  z-index: 1001;
+  direction: rtl;
   font-family: 'Vazir', Tahoma, sans-serif;
+}
+
+/* عنوان مودال */
+.modal-container h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #333;
+}
+
+/* استایل فرم داخل مودال */
+.register-form {
+  width: 100%;
+}
+
+/* استایل دکمه‌ها */
+button[mat-flat-button] {
+  min-width: 100px;
+}
+
+/* استایل دکمه انصراف */
+button[mat-stroked-button] {
+  min-width: 100px;
+}
+
+/* خطاها به رنگ قرمز */
+mat-error {
+  font-size: 0.85rem;
+  color: #d32f2f;
   direction: rtl;
 }
 
-/* تیتر */
-.modal-container h2 {
+/* اگر خواستی اسکرول مودال رو استایل بدی */
+.modal-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-container::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 3px;
+}
+:host {
+  display: block;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 10px;
+  font-family: 'Vazir', Tahoma, sans-serif;
+}
+
+h2 {
   text-align: center;
-  margin-bottom: 1rem;
-  color: #1976d2;
-  font-weight: 700;
+  font-size: 1.5rem;
+  color: #333;
 }
 
-/* فرم و labelها */
-form label {
-  display: block;
-  margin-bottom: 0.75rem;
-  margin-left: 0.5rem;
-  margin-right:0.5rem;
-  font-weight: 600;
-  color: #444;
-  font-size: 0.95rem;
-}
-
-form input {
-  width: 100%;
-  padding: 7px 10px;
-  margin-top: 4px;
-  border: 1px solid #bbb;
-  border-radius: 5px;
-  font-size: 1rem;
-  font-family: inherit;
-  transition: border-color 0.3s ease;
-}
-
-form input:focus {
-  border-color: #1976d2;
-  outline: none;
-}
-
-/* ارورها */
-.error {
-  color: #d32f2f;
-  font-size: 0.8rem;
-  margin-top: 3px;
-  display: block;
-}
-
-/* دکمه‌ها */
-.buttons {
-  margin-top: 1.5rem;
-  text-align: left;
-}
-
-.buttons button {
-  padding: 8px 16px;
-  margin-left: 8px;
-  border: none;
-  border-radius: 5px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: background-color 0.25s ease;
-  font-family: inherit;
-}
-
-.buttons button[type="submit"] {
-  background-color: #1976d2;
-  color: white;
-}
-
-.buttons button[type="submit"]:hover {
-  background-color: #0d47a1;
-}
-
-.buttons button[type="button"] {
-  background-color: transparent;
-  color: #1976d2;
-}
-
-.buttons button[type="button"]:hover {
-  background-color: #e3f2fd;
+button[mat-flat-button] {
+  min-width: 100px;
+  margin-right: 0.5rem;
 }

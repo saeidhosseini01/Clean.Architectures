@@ -1,16 +1,20 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 
-// import های لازم برای مودال
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { RegisterComponent } from './pages/register/register.component';
+import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
     RouterModule,
-    MatDialogModule
+    MatDialogModule,FormsModule, MatInputModule, MatButtonModule, FormsModule,
+     CommonModule, RouterOutlet
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
@@ -29,18 +33,16 @@ export class AppComponent {
   scrollToContact() {
     document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
   }
-
   openRegisterDialog() {
-    const dialogRef = this.dialog.open(RegisterComponent, {
-      width: '400px'
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        console.log('اطلاعات ثبت‌نام:', result);
-        // اینجا می‌تونی ارسال به سرور انجام بدی یا هر کاری
-      }
-    });
-  }
+      this.openPupUp();
+    }
+openPupUp() {
+    this.dialog.open(RegisterComponent, {
+      width: '50%',
+      enterAnimationDuration: '1000ms',
+      exitAnimationDuration: '1000ms'
+    });}
+ 
+  
  
 }

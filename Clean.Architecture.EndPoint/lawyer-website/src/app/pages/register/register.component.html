@@ -1,56 +1,59 @@
-<div class="modal-overlay" (click)="onClose()"></div>
 
-<div class="modal-container" (click)="$event.stopPropagation()">
-  <h2>ثبت‌نام</h2>
-  <form [formGroup]="Register" (ngSubmit)="onSubmit()">
 
-    <label>
-      نام
-      <input formControlName="fname" type="text" />
-      <span *ngIf="Register.get('fname')?.touched && Register.get('fname')?.invalid" class="error">
+<div class="modal-container" (click)="$event.stopPropagation()" style="direction: rtl; font-family: 'Vazir', sans-serif;">
+
+  <h2 style="text-align: center; margin-bottom: 1rem;">ثبت‌نام</h2>
+
+  <form [formGroup]="Register" (ngSubmit)="onSubmit()" class="register-form">
+
+    <mat-form-field appearance="outline" style="width: 100%; margin-bottom: 1rem;">
+      <mat-label>نام</mat-label>
+      <input matInput formControlName="fname" />
+      <mat-error *ngIf="Register.get('fname')?.hasError('required') && Register.get('fname')?.touched">
         وارد کردن نام الزامی است
-      </span>
-    </label>
+      </mat-error>
+    </mat-form-field>
 
-    <label>
-      نام خانوادگی
-      <input formControlName="lname" type="text" />
-      <span *ngIf="Register.get('lname')?.touched && Register.get('lname')?.invalid" class="error">
+    <mat-form-field appearance="outline" style="width: 100%; margin-bottom: 1rem;">
+      <mat-label>نام خانوادگی</mat-label>
+      <input matInput formControlName="lname" />
+      <mat-error *ngIf="Register.get('lname')?.hasError('required') && Register.get('lname')?.touched">
         وارد کردن نام خانوادگی الزامی است
-      </span>
-    </label>
+      </mat-error>
+    </mat-form-field>
 
-    <label>
-      آدرس
-      <input formControlName="address" type="text" />
-      <span *ngIf="Register.get('address')?.touched && Register.get('address')?.invalid" class="error">
+    <mat-form-field appearance="outline" style="width: 100%; margin-bottom: 1rem;">
+      <mat-label>آدرس</mat-label>
+      <input matInput formControlName="address" />
+      <mat-error *ngIf="Register.get('address')?.hasError('required') && Register.get('address')?.touched">
         وارد کردن آدرس الزامی است
-      </span>
-    </label>
+      </mat-error>
+    </mat-form-field>
 
-    <label>
-      تلفن
-      <input formControlName="phone" type="text" />
-      <span *ngIf="Register.get('phone')?.touched && Register.get('phone')?.errors">
-        <span *ngIf="Register.get('phone')?.errors?.['required']">تلفن را وارد کنید</span>
-        <span *ngIf="Register.get('phone')?.errors?.['pattern']">تلفن باید ۱۰ تا ۱۵ رقم باشد</span>
-      </span>
-    </label>
+    <mat-form-field appearance="outline" style="width: 100%; margin-bottom: 1rem;">
+      <mat-label>تلفن</mat-label>
+      <input matInput formControlName="phone" />
+      <mat-error *ngIf="Register.get('phone')?.touched && Register.get('phone')?.errors">
+        <span *ngIf="Register.get('phone')?.hasError('required')">تلفن را وارد کنید</span>
+        <span *ngIf="Register.get('phone')?.hasError('pattern')">تلفن باید ۱۰ تا ۱۵ رقم باشد</span>
+      </mat-error>
+    </mat-form-field>
 
-    <label>
-      سن
-      <input formControlName="age" type="number" />
-      <span *ngIf="Register.get('age')?.touched && Register.get('age')?.errors">
-        <span *ngIf="Register.get('age')?.errors?.['required']">سن را وارد کنید</span>
-        <span *ngIf="Register.get('age')?.errors?.['min'] || Register.get('age')?.errors?.['max']">
+    <mat-form-field appearance="outline" style="width: 100%; margin-bottom: 1rem;">
+      <mat-label>سن</mat-label>
+      <input matInput type="number" formControlName="age" />
+      <mat-error *ngIf="Register.get('age')?.touched && Register.get('age')?.errors">
+        <span *ngIf="Register.get('age')?.hasError('required')">سن را وارد کنید</span>
+        <span *ngIf="Register.get('age')?.hasError('min') || Register.get('age')?.hasError('max')">
           سن باید بین ۱ تا ۱۲۰ باشد
         </span>
-      </span>
-    </label>
+      </mat-error>
+    </mat-form-field>
 
-    <div style="text-align: right; margin-top: 1rem;">
-  <button mat-button type="button" (click)="onClose()">انصراف</button>
-  <button mat-flat-button color="primary" type="submit">ثبت‌نام</button>
-</div>
+    <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 1.5rem;">
+      <button mat-stroked-button color="warn" type="button" (click)="onClose()">انصراف</button>
+      <button mat-flat-button color="primary" type="submit">ثبت‌نام</button>
+    </div>
+
   </form>
 </div>
