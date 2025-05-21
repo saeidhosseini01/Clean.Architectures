@@ -38,8 +38,8 @@
 form label {
   display: block;
   margin-bottom: 0.75rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin-left: 0.5rem;
+  margin-right:0.5rem;
   font-weight: 600;
   color: #444;
   font-size: 0.95rem;

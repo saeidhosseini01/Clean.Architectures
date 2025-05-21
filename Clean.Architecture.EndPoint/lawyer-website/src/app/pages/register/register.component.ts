@@ -1,18 +1,33 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
+import { NgIf } from '@angular/common';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatError } from '@angular/material/form-field';
 
 @Component({
   selector: 'app-register',
+  standalone: true,
+  imports: [
+    ReactiveFormsModule,
+    NgIf,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatError
+  ],
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-  @Output() closeModal = new EventEmitter<void>();
-  @Output() registerSubmit = new EventEmitter<any>();
-
   Register: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private dialogRef: MatDialogRef<RegisterComponent> // استفاده از MatDialogRef
+  ) {
     this.Register = this.fb.group({
       fname: ['', Validators.required],
       lname: ['', Validators.required],
@@ -24,14 +39,13 @@ export class RegisterComponent {
 
   onSubmit() {
     if (this.Register.valid) {
-      this.registerSubmit.emit(this.Register.value);
-      this.onClose();
+      this.dialogRef.close(this.Register.value); // بستن مودال و ارسال دیتا
     } else {
       this.Register.markAllAsTouched();
     }
   }
 
   onClose() {
-    this.closeModal.emit();
+    this.dialogRef.close(); // بستن مودال بدون دیتا
   }
 }
