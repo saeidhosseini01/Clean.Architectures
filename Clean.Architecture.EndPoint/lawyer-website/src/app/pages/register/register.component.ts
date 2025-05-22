@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { NgIf } from '@angular/common';
@@ -22,7 +22,7 @@ import { MatCardModule } from '@angular/material/card';
   styleUrls: ['./register.component.css'],
   host: { class: 'custom-dialog-container' }
 })
-export class RegisterComponent {
+export class RegisterComponent  implements OnInit{
   Register: FormGroup;
 
   constructor(
@@ -36,6 +36,9 @@ export class RegisterComponent {
       phone: ['', [Validators.required, Validators.pattern(/^\d{10,15}$/)]],
       age: ['', [Validators.required, Validators.min(1), Validators.max(120)]],
     });
+  }
+  ngOnInit(): void {
+  alert("sds");
   }
 
   onSubmit() {

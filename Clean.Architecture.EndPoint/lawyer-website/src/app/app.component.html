@@ -1,32 +1,4 @@
-<header class="header">
-  <nav class="navbar container">
-    <div class="nav-right">
-      <a routerLink="/login" class="btn login">ورود</a>
-      <a (click)="openRegisterDialog()" class="btn signup" style="cursor:pointer;">ثبت‌ نام</a>
-      <a routerLink="/register" class="btn signup">ثبت‌نام</a>
-    </div>
-    <div class="nav-left">
-      <ul class="nav-links">
-        <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">خانه</a></li>
-        <li><a routerLink="/about" routerLinkActive="active">درباره من</a></li>
-        <li><a routerLink="/services" routerLinkActive="active">خدمات</a></li>
-        <li><a routerLink="/articles" routerLinkActive="active">مقالات</a></li>
-        <li><a routerLink="/contact" routerLinkActive="active">تماس</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <section class="hero container">
-    <div class="hero-content">
-      <h1>وکالت تخصصی با تجربه بالا</h1>
-      <p>حل مشکلات حقوقی شما با دانش و مهارت حرفه‌ای و ارائه بهترین مشاوره‌ها</p>
-      <button (click)="scrollToContact()">ارتباط با من</button>
-    </div>
-    <div class="hero-image"></div>
-  </section>
-</header>
 
 
-<main class="main-content container">
   <router-outlet></router-outlet>
-</main>
+

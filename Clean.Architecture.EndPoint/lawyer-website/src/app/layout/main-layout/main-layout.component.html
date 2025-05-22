@@ -1,0 +1,53 @@
+<div class="main-container">
+
+  <!-- 🔷 هدر (navbar + hero) -->
+  <header class="header">
+    <nav class="navbar container">
+      <div class="nav-right">
+        <a routerLink="/login" class="btn login">ورود</a>
+        <a (click)="openRegisterDialog()" class="btn signup">ثبت‌ نام (دیالوگ)</a>
+        <a routerLink="/register" class="btn signup">ثبت‌نام (صفحه)</a>
+      </div>
+      <div class="nav-left">
+        <ul class="nav-links">
+          <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">خانه</a></li>
+          <li><a routerLink="/about" routerLinkActive="active">درباره من</a></li>
+          <li><a routerLink="/services" routerLinkActive="active">خدمات</a></li>
+          <li><a routerLink="/articles" routerLinkActive="active">مقالات</a></li>
+          <li><a routerLink="/contact" routerLinkActive="active">تماس</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section class="hero container">
+      <div class="hero-content">
+        <h1>وکالت تخصصی با تجربه بالا</h1>
+        <p>حل مشکلات حقوقی شما با دانش و مهارت حرفه‌ای</p>
+        <button (click)="scrollToContact()">ارتباط با من</button>
+      </div>
+      <div class="hero-image"></div>
+    </section>
+  </header>
+
+  <!-- 🔷 بدنه اصلی: سایدبار + محتوا -->
+  <div class="layout-body">
+    
+    <!-- 🟧 سایدبار -->
+    <aside class="sidebar">
+      <h3 class="sidebar-title">پنل مدیریت</h3>
+      <ul class="sidebar-links">
+        <li><a routerLink="/dashboard" routerLinkActive="active">داشبورد</a></li>
+        <li><a routerLink="/profile" routerLinkActive="active">پروفایل</a></li>
+        <li><a routerLink="/settings" routerLinkActive="active">تنظیمات</a></li>
+        <li><a routerLink="/inbox" routerLinkActive="active">پیام‌ها</a></li>
+      </ul>
+    </aside>
+
+    <!-- 🟩 محتوای اصلی -->
+    <main class="main-content">
+      <router-outlet></router-outlet>
+    </main>
+
+  </div>
+
+</div>
