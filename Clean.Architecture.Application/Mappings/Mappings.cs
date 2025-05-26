@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using Clean.Architecture.Application.Dtos;
-using Clean.Architecture.Domain.Entities.Base;
+using Clean.Architecture.Application.Dtos.User;
+using Clean.Architecture.Domain.Entities.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;

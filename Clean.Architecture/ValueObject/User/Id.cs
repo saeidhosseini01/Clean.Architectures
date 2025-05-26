@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Clean.Architecture.Domain.ValueObject.User
 {
-    public record Id(string Value)
+    public record Id(Guid Value)
     {
-        public static implicit operator string(Id id)=>id.Value;
+        public static implicit operator Guid(Id id)=>id.Value;
     }
 }

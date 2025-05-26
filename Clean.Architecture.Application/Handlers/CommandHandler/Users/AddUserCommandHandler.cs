@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
-using Clean.Architecture.Application.Command;
-using Clean.Architecture.Application.Dtos;
+using Clean.Architecture.Application.Command.User;
+using Clean.Architecture.Domain.Entities.User;
+using Clean.Architecture.Application.Dtos.User;
 using Clean.Architecture.Domain.Entities;
+
 using Clean.Architecture.Domain.Interfaces;
 using MediatR;
 using System;
@@ -10,7 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Clean.Architecture.Application.Handlers.CommandHandler
+namespace Clean.Architecture.Application.Handlers.CommandHandler.Users
 {
 
 
@@ -27,7 +29,7 @@ namespace Clean.Architecture.Application.Handlers.CommandHandler
         }
         public async Task<UserDto> Handle(AddUserCommand request, CancellationToken cancellationToken)
         {
-            var user = new User
+            var user = new 
             {
                 Age = request.Age,
                 family = request.Family,

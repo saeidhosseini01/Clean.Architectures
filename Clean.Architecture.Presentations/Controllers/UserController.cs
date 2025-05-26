@@ -1,4 +1,4 @@
-﻿using Clean.Architecture.Application.Dtos;
+﻿using Clean.Architecture.Application.Dtos.User;
 using Clean.Architecture.Application.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Http;

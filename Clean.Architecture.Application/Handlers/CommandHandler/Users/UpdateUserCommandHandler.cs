@@ -1,11 +1,12 @@
 ﻿using AutoMapper;
-using Clean.Architecture.Application.Command;
-using Clean.Architecture.Application.Dtos;
-using Clean.Architecture.Domain.Entities;
+using Clean.Architecture.Application.Command.User;
+using Clean.Architecture.Application.Dtos.User;
+using Clean.Architecture.Domain.Entities.User;
 using Clean.Architecture.Domain.Interfaces;
+using Clean.Architecture.Domain.Entities.User;
 using MediatR;
 
-namespace Clean.Architecture.Application.Handlers.CommandHandler
+namespace Clean.Architecture.Application.Handlers.CommandHandler.Users
 {
     public class UpdateUserCommandHandler(IUserRepository userRepository, IMapper mapper)
         : IRequestHandler<UpdateUserCommand, UserDto>

@@ -4,7 +4,7 @@ using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using System.Text;
 using System.Threading.Tasks;
-using Clean.Architecture.Domain.Entities.Base;
+using Clean.Architecture.Domain.Entities.User;
 
 
 

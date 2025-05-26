@@ -1,4 +1,4 @@
-﻿using Clean.Architecture.Application.Dtos;
+﻿using Clean.Architecture.Application.Dtos.User;
 using MediatR;
 
 namespace Clean.Architecture.Application.Queries

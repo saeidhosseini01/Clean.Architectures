@@ -6,17 +6,17 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-namespace Clean.Architecture.Application.Dtos
+namespace Clean.Architecture.Application.Dtos.User
 {
 
-    public  class UserDto(Id id, Name name,Family family,Age age)
+    public class UserDto(Id id, Name name, Family family, Age age)
     {
 
         [JsonPropertyName("id")]
         public string Id { get; } = id;
 
         [JsonPropertyName("name")]
-        public string Name { get; } =name;
+        public string Name { get; } = name;
 
 
         [JsonPropertyName("family")]
@@ -24,6 +24,6 @@ namespace Clean.Architecture.Application.Dtos
 
 
         [JsonPropertyName("age")]
-        public double  Age{ get; } = age;
+        public double Age { get; } = age;
     }
 }

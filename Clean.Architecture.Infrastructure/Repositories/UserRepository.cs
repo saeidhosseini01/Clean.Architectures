@@ -1,4 +1,4 @@
-﻿using Clean.Architecture.Domain.Entities.Base;
+﻿using Clean.Architecture.Domain.Entities.User;
 using Clean.Architecture.Domain.Exeptions;
 using Clean.Architecture.Domain.Interfaces;
 using Clean.Architecture.Persistence.ApiDbContext;

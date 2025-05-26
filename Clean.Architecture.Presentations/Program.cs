@@ -1,4 +1,4 @@
-using Clean.Architecture.Application.Handlers.QuerisHandler;
+using Clean.Architecture.Application.Handlers.QuerisHandler.User;
 using Clean.Architecture.Application.Mappings;
 using Clean.Architecture.Domain.Interfaces;
 using Clean.Architecture.Infrastructure.Repositories;
