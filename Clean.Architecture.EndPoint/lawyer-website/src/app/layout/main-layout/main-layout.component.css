@@ -158,23 +158,23 @@ html, body {
 /* =================== پنل مدیریت و محتوا =================== */
 .layout-body {
   display: flex;
-  flex-direction: row; /* تغییر از row-reverse به row برای سایدبار چپ */
+  flex-direction: row-reverse; /* ✅ انتقال سایدبار به راست */
   flex: 1;
-  position: relative; 
   background-color: #f5f5f5;
+  min-height: 100%;
 }
 
 .sidebar {
-   width: 240px;
+  width: 240px;
   background-color: #1e1e2f;
   color: #fff;
   padding: 20px;
-  position: fixed; /* تغییر از sticky به fixed */
-  left: 0; /* موقعیت در سمت چپ */
-  top: 0; /* موقعیت در بالای صفحه */
-  height: 100vh; /* ارتفاع کامل */
-  z-index: 1000; /* اطمینان از نمایش بالای سایر عناصر */
-  overflow-y: auto; /* امکان اسکرول اگر محتوا زیاد شد */
+  position: fixed;
+  right: 0; /* ✅ موقعیت سایدبار در راست */
+  top: 0;
+  height: 100vh;
+  z-index: 1000;
+  overflow-y: auto;
 }
 
 .sidebar-title {
@@ -215,7 +215,8 @@ html, body {
   flex: 1;
   background-color: #fff;
   padding: 24px;
-  overflow-y: auto;
+  margin-right: 240px; /* ✅ جبران فضای اشغال‌شده توسط سایدبار راست */
+  min-height: calc(100vh - 70px); /* برای اطمینان از پر شدن صفحه */
 }
 
 /* =================== واکنش‌گرا (موبایل) =================== */
@@ -253,6 +254,10 @@ html, body {
     padding: 15px;
   }
 
+  .main-content {
+    margin-right: 0;
+  }
+
   .sidebar-links {
     display: flex;
     flex-direction: row;
@@ -272,7 +277,6 @@ html, body {
 }
 
 /* =================== بهبودهای ظاهری =================== */
-/* برای اسکرول بار */
 ::-webkit-scrollbar {
   width: 8px;
 }
