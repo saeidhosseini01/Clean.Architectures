@@ -14,6 +14,10 @@ import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
+import { HeaderComponent } from '../../core/header/header.component';
+import { SidebarComponent } from '../../core/sidebar/sidebar.component';
+
+import { FooterComponent } from '../../core/footer/footer.component';
 
 
 
@@ -26,7 +30,7 @@ import { CommonModule } from '@angular/common';
   imports: [
     RouterModule,
     MatDialogModule,FormsModule, MatInputModule, MatButtonModule, FormsModule,
-     CommonModule, RouterOutlet
+     CommonModule, RouterOutlet,HeaderComponent,SidebarComponent,FooterComponent
   ],
   templateUrl: './main-layout.component.html',
   styleUrls: ['./main-layout.component.css']

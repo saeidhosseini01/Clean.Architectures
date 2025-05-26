@@ -1,0 +1,37 @@
+/* استایل کلی سایدبار */
+:host {
+  display: block;
+  width: 220px;
+  height: 100vh;
+  background-color: #1e1e2f;
+  color: #fff;
+  direction: rtl;
+  position: relative;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* لیست منو */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* هر آیتم منو */
+li {
+  padding: 15px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+li:hover {
+  background-color: #2a2a3d;
+}
+
+/* عنوان بالا (اختیاری) */
+.sidebar-title {
+  padding: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}

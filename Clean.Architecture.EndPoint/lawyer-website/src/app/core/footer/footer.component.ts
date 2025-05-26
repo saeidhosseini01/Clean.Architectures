@@ -3,14 +3,16 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-sidebar',
+  selector: 'app-footer',
     standalone: true,
     imports: [
     RouterModule,
   
      CommonModule
   ],
-  templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.css']
+  templateUrl: './footer.component.html',
+  styleUrls: ['./footer.component.css']
 })
-export class SidebarComponent {}
+export class FooterComponent {
+  currentYear: number = new Date().getFullYear();
+}
