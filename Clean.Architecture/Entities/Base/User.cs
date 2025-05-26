@@ -1,15 +1,16 @@
-﻿using System;
+﻿using Clean.Architecture.Domain.Entities.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Clean.Architecture.Domain.Entities
+namespace Clean.Architecture.Domain.Entities.Base
 {
 
-    public record User
+    public record User:BaseEntity
     {
-        public string Id { get; set; }
+        
         public string Name { get; set; }
         public string family { get; set; }
         public double Age { get; set; }
