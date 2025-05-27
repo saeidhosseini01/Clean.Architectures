@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Clean.Architecture.Application.Queries.Const
 {
-    public class GetConstByIdQuery: IRequest<ConstDtos>
+    public class GetConstByIdQuery: IRequest<ConstDto>
     {
         private readonly Guid id;
 

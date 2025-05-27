@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Clean.Architecture.Application.Queries.Const
 {
-    public class GetConstByKeyQuery:IRequest<ConstDtos>
+    public class GetConstByKeyQuery:IRequest<ConstDto>
     {
         private readonly string key;
 

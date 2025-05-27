@@ -4,7 +4,7 @@ using MediatR;
 
 namespace Clean.Architecture.Application.Command.Const
 {
-    public class UpdateConstCommand(Name name, Key key, Order order, Value value) : IRequest<ConstDtos>
+    public class UpdateConstCommand(Name name, Key key, Order order, Value value) : IRequest<ConstDto>
     {
         public Name Name { get; set; } = name;
         public Key Key { get; set; } = key;

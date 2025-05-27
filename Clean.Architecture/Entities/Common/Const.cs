@@ -11,7 +11,7 @@ namespace Clean.Architecture.Domain.Entities.Common
       
         public string Name { get; set; }
         public string Key { get; set; }
-        public string ConstTypeId { get; set; }
+        public string ConstTypeIds { get; set; }
       
         public int   Order { get; set; }
 

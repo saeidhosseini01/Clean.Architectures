@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Clean.Architecture.Application.Queries.Const
 {
-    public class GetAllConstQuery:IRequest<List<ConstDtos>>;
+    public class GetAllConstQuery:IRequest<List<ConstDto>>;
     
     
 }

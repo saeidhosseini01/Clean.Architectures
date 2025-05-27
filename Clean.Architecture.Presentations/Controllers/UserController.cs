@@ -1,5 +1,6 @@
 ﻿using Clean.Architecture.Application.Dtos.User;
 using Clean.Architecture.Application.Queries;
+using Clean.Architecture.Application.Queries.User;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -35,8 +36,8 @@ namespace Clean.Architecture.Presentations.Controllers
         [HttpGet("GetById")]
         public async Task<ActionResult<UserDto>> GetById( CancellationToken cancellationToken)
         {
-            var querq = new GetUserByIdQuery("1");
-            var user=await mediator.Send(querq, cancellationToken);
+            var query = new GetUserByIdQuery(new Guid());
+            var user=await mediator.Send(query, cancellationToken);
             return Ok(user);
         }
      }

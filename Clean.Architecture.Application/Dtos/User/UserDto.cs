@@ -13,7 +13,7 @@ namespace Clean.Architecture.Application.Dtos.User
     {
 
         [JsonPropertyName("id")]
-        public string Id { get; } = id;
+        public Guid Id { get; } = id;
 
         [JsonPropertyName("name")]
         public string Name { get; } = name;

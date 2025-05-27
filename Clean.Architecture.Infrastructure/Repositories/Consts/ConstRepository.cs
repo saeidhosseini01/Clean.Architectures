@@ -46,7 +46,7 @@ namespace Clean.Architecture.Infrastructure.Repositories.Consts
             var res = _context.Const.Where(c => c.Id == model.Id).FirstOrDefault();
             if (res == null) throw new NotFountUserExeption();
             res.Description = model.Description;
-            res.ConstTypeId = model.ConstTypeId;
+            res.ConstTypeIds = model.ConstTypeIds;
             res.Order = model.Order;
             res.Key = model.Key;
             res.Name = model.Name;

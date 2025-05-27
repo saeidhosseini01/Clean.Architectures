@@ -1,7 +1,9 @@
 using Clean.Architecture.Application.Handlers.QuerisHandler.User;
 using Clean.Architecture.Application.Mappings;
-using Clean.Architecture.Domain.Interfaces.User;
-using Clean.Architecture.Infrastructure.Repositories.User;
+using Clean.Architecture.Domain.Interfaces.Consts;
+using Clean.Architecture.Domain.Interfaces.Users;
+using Clean.Architecture.Infrastructure.Repositories.Consts;
+using Clean.Architecture.Infrastructure.Repositories.Users;
 using Clean.Architecture.Persistence.ApiDbContext;
 using Clean.Architecture.WebApi.EndPoint;
 using MediatR;
@@ -34,6 +36,7 @@ void ConfigureServices(IServiceCollection services, IConfiguration configuration
      cfg.RegisterServicesFromAssembly(typeof(GetAllUsersQueryHandler).Assembly)
  );
     services.AddScoped<IUserRepository, UserRepository>();
+    services.AddScoped<IConstRepository, ConstRepository>();
 
     services.AddDbContext<ApiDbContexts>(options =>
         options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),sqlpots=>sqlpots.EnableRetryOnFailure()));

@@ -4,7 +4,7 @@ using Clean.Architecture.Application.Dtos.User;
 using Clean.Architecture.Domain.Entities.User;
 using Clean.Architecture.Domain.Entities.User;
 using MediatR;
-using Clean.Architecture.Domain.Interfaces.User;
+using Clean.Architecture.Domain.Interfaces.Users;
 
 namespace Clean.Architecture.Application.Handlers.CommandHandler.Users
 {

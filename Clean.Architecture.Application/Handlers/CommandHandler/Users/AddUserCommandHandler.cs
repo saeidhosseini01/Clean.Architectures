@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Clean.Architecture.Domain.Interfaces.User;
+using Clean.Architecture.Domain.Interfaces.Users;
 
 namespace Clean.Architecture.Application.Handlers.CommandHandler.Users
 {
@@ -28,7 +28,7 @@ namespace Clean.Architecture.Application.Handlers.CommandHandler.Users
         }
         public async Task<UserDto> Handle(AddUserCommand request, CancellationToken cancellationToken)
         {
-            var user = new 
+            User user = new User
             {
                 Age = request.Age,
                 family = request.Family,

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Clean.Architecture.Application.Command.Const
 {
-    public class AddConstCommand(Name name, Key key, Order order, Value value) : IRequest<ConstDtos>
+    public class AddConstCommand(Name name, Key key, Order order, Value value) : IRequest<ConstDto>
     {
         public Name Name { get; set; } = name;
         public Key Key { get; set; } = key;

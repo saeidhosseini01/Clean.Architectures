@@ -5,9 +5,9 @@ namespace Clean.Architecture.Application.Queries.User
 {
     public class GetUserByIdQuery : IRequest<UserDto>
     {
-        public readonly string id;
+        public readonly Guid id;
 
-        public GetUserByIdQuery(string id)
+        public GetUserByIdQuery(Guid id)
         {
             this.id = id;
         }
