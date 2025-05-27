@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
+using Clean.Architecture.Application.Dtos.Common;
 using Clean.Architecture.Application.Dtos.User;
+using Clean.Architecture.Domain.Entities.Common;
 using Clean.Architecture.Domain.Entities.User;
 using System;
 using System.Collections.Generic;
@@ -16,6 +18,7 @@ namespace Clean.Architecture.Application.Mappings
         {
                 
         CreateMap<User, UserDto>().ReverseMap();
+        CreateMap<Const, ConstDto>().ReverseMap();
         }
     }
 }

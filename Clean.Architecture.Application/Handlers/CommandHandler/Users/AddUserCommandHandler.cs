@@ -3,14 +3,13 @@ using Clean.Architecture.Application.Command.User;
 using Clean.Architecture.Domain.Entities.User;
 using Clean.Architecture.Application.Dtos.User;
 using Clean.Architecture.Domain.Entities;
-
-using Clean.Architecture.Domain.Interfaces;
 using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Clean.Architecture.Domain.Interfaces.User;
 
 namespace Clean.Architecture.Application.Handlers.CommandHandler.Users
 {

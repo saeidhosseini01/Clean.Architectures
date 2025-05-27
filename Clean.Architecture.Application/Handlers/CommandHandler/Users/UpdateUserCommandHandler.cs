@@ -2,9 +2,9 @@
 using Clean.Architecture.Application.Command.User;
 using Clean.Architecture.Application.Dtos.User;
 using Clean.Architecture.Domain.Entities.User;
-using Clean.Architecture.Domain.Interfaces;
 using Clean.Architecture.Domain.Entities.User;
 using MediatR;
+using Clean.Architecture.Domain.Interfaces.User;
 
 namespace Clean.Architecture.Application.Handlers.CommandHandler.Users
 {

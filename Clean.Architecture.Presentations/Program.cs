@@ -1,7 +1,7 @@
 using Clean.Architecture.Application.Handlers.QuerisHandler.User;
 using Clean.Architecture.Application.Mappings;
-using Clean.Architecture.Domain.Interfaces;
-using Clean.Architecture.Infrastructure.Repositories;
+using Clean.Architecture.Domain.Interfaces.User;
+using Clean.Architecture.Infrastructure.Repositories.User;
 using Clean.Architecture.Persistence.ApiDbContext;
 using Clean.Architecture.WebApi.EndPoint;
 using MediatR;
