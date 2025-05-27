@@ -6,10 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Clean.Architecture.Application.Queries
+namespace Clean.Architecture.Application.Queries.User
 {
 
 
-    public class GetAllUserQuery:IRequest<List<UserDto>>;
-    
+    public class GetAllUserQuery : IRequest<List<UserDto>>;
+
 }

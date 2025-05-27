@@ -35,7 +35,7 @@ namespace Clean.Architecture.Presentations.Controllers
         [HttpGet("GetById")]
         public async Task<ActionResult<UserDto>> GetById( CancellationToken cancellationToken)
         {
-            var querq = new GetUserByIdGuery("1");
+            var querq = new GetUserByIdQuery("1");
             var user=await mediator.Send(querq, cancellationToken);
             return Ok(user);
         }

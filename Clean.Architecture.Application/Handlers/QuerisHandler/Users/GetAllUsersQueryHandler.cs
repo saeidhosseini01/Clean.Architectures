@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Clean.Architecture.Application.Dtos.User;
-using Clean.Architecture.Application.Queries;
+using Clean.Architecture.Application.Queries.User;
 using Clean.Architecture.Domain.Interfaces;
 using MediatR;
 using System;

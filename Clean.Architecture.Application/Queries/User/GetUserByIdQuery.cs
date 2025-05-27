@@ -1,16 +1,16 @@
 ﻿using Clean.Architecture.Application.Dtos.User;
 using MediatR;
 
-namespace Clean.Architecture.Application.Queries
+namespace Clean.Architecture.Application.Queries.User
 {
-    public class GetUserByIdGuery : IRequest<UserDto>
+    public class GetUserByIdQuery : IRequest<UserDto>
     {
         public readonly string id;
 
-        public GetUserByIdGuery(string id)
+        public GetUserByIdQuery(string id)
         {
             this.id = id;
         }
     }
-    
+
 }
