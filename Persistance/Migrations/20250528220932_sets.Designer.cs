@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Clean.Architecture.Persistence.Migrations
 {
     [DbContext(typeof(ApiDbContexts))]
-    [Migration("20250527222314_setChema")]
-    partial class setChema
+    [Migration("20250528220932_sets")]
+    partial class sets
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

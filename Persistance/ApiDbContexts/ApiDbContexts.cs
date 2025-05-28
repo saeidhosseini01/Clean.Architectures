@@ -21,13 +21,13 @@ namespace Clean.Architecture.Persistence.ApiDbContext
         {
             modelBuilder.Entity<User>(user =>
             {
-                
+                user.ToTable("Users", schema: "auth");
                 user.Property(e => e.Id).ValueGeneratedOnAdd();
                 user.HasKey(e => e.Id);
             });
             modelBuilder.Entity<Const>(entity =>
             {
-             
+                entity.ToTable("Const", schema: "CNT");
                 entity.Property(e => e.Id);
                 entity.HasKey(e => e.Id);
             });
