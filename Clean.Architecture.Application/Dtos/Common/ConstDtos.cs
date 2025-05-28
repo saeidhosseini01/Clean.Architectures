@@ -1,4 +1,5 @@
-﻿using Clean.Architecture.Domain.ValueObject.Const;
+﻿using Clean.Architecture.Application.Dtos.Base;
+using Clean.Architecture.Domain.ValueObject.Const;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,16 +9,24 @@ using System.Threading.Tasks;
 
 namespace Clean.Architecture.Application.Dtos.Common
 {
-    public  class ConstDto(Name name,Key key,ConstTypeId constTypeId,Order order )
+    public  class ConstDto: GenericDto
     {
-
+        public ConstDto(Name name, Key key, ConstTypeId constTypeId, Order order)
+        {
+            Id=id;
+            Description = description;
+            Name = name;
+            Key = key;
+            ConstTypeId = constTypeId;
+            Order = order;
+        }
         [JsonPropertyName("name")]
-        public string Name { get; set; }=name;
+        public string Name { get; set; }
         [JsonPropertyName("key")]
-        public string Key { get; set; }=key;
+        public string Key { get; set; }
         [JsonPropertyName("constTypeId")]
-        public int ConstTypeId { get; set; } = constTypeId;
+        public int ConstTypeId { get; set; } 
         [JsonPropertyName("order")]
-        public int Order { get; set; }  = order;
+        public int Order { get; set; } 
     }
 }
