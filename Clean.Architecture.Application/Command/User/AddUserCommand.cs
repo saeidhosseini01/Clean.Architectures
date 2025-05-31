@@ -7,17 +7,24 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using Clean.Architecture.Application.Dtos.User;
+using Clean.Architecture.Domain.ValueObject.Genaric;
 
 namespace Clean.Architecture.Application.Command.User
 {
-    public class AddUserCommand(Id id, Name name, Family family, Age age) : IRequest<UserDto>
+    public class AddUserCommand : IRequest<UserDto>
     {
-        public string Name { get; set; } = name;
-        public string Family { get; set; } = family;
-        public double Age { get; set; } = age;
-        public Guid Id { get; set; } = id;
+        public Guid Id { get; }
+        public string Name { get; }
+        public string Family { get; }
+        public double Age { get; }
 
-
-
+        public AddUserCommand(Guid id, string name, string family, double age)
+        {
+            Id = id;
+            Name = name;
+            Family = family;
+            Age = age;
+        }
     }
+
 }
