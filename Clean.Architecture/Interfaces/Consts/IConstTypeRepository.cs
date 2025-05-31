@@ -10,7 +10,7 @@ namespace Clean.Architecture.Domain.Interfaces.Consts
     public interface IConstTypeRepository
     {
         Task<List<ConstType>> GetAllConstTypeAsync(CancellationToken cancellationToken);
-        Task<ConstType> GetConstTypeByIdAsync(string id, CancellationToken cancellationToken);
+        Task<ConstType> GetConstTypeByIdAsync(Guid id, CancellationToken cancellationToken);
         Task AddConstTypeAsync(ConstType constType, CancellationToken cancellationToken);
         Task UpdateConstTypeAsync(ConstType constType, CancellationToken cancellationToken);
 
