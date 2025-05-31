@@ -1,7 +1,7 @@
 ﻿namespace Clean.Architecture.Domain.ValueObject.Genaric
 {
-    public record Descripton(string value)
+    public record Description(string value)
     {
-        public static implicit operator string(Descripton descripton)=>descripton.value;
+        public static implicit operator string(Description descripton)=>descripton.value;
     }
 }

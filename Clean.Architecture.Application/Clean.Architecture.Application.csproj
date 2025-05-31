@@ -10,7 +10,6 @@
     <Folder Include="Abstraction\Email\" />
     <Folder Include="Abstraction\Data\" />
     <Folder Include="Contracts\" />
-    <Folder Include="Queries\NewFolder\" />
     <Folder Include="Usecase\Todo\Queries\" />
     <Folder Include="Usecase\Todo\Events\" />
     <Folder Include="Usecase\Todo\Commands\" />
