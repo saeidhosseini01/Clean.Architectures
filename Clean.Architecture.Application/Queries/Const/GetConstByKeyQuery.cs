@@ -10,7 +10,7 @@ namespace Clean.Architecture.Application.Queries.Const
 {
     public class GetConstByKeyQuery:IRequest<ConstDto>
     {
-        private readonly string key;
+        public readonly string key;
 
         public GetConstByKeyQuery(string key)
         {
