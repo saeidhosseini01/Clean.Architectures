@@ -36,4 +36,39 @@ namespace Clean.Architecture.Application.Handlers.CommandHandler.Consts
 
         }
     }
+
+
+
+
+    public class UpdateConstTypeCommandHandler : IRequestHandler<UpdateConstTypeCommand, ConstTypeDto>
+    {
+        private readonly IConstTypeRepository _constTypeRepository;
+        private readonly IMapper _mapper;
+
+        public UpdateConstTypeCommandHandler(IConstTypeRepository constTypeRepository, IMapper mapper)
+        {
+            _constTypeRepository = constTypeRepository;
+            _mapper = mapper;
+        }
+
+        public async Task<ConstTypeDto> Handle(UpdateConstTypeCommand request, CancellationToken cancellationToken)
+        {
+            ConstType res = await _constTypeRepository.GetConstTypeByIdAsync(request.Id, cancellationToken);
+            if (res is null) { }
+          
+            res.TypeTitle = request.TypeTitle;
+            res.Description = request.Description;
+            res.TypeId = request.TypeId;
+            await _constTypeRepository.UpdateConstTypeAsync(res, cancellationToken);
+            return _mapper.Map<ConstTypeDto>(_constTypeRepository.GetConstTypeByIdAsync(request.Id, cancellationToken));
+
+        }
+    }
+
 }
+
+
+
+
+
+

@@ -10,10 +10,11 @@ namespace Clean.Architecture.Application.Command.Const
 
         public TypeTitle TypeTitle { get; set; }
         public Description Description { get; set; }
-
+        public Id Id { get; set; }
         public TypeId TypeId { get; set; }
-        public UpdateConstTypeCommand(TypeTitle typeTitle, Description descripton, TypeId typeId)
+        public UpdateConstTypeCommand (Id id,   TypeTitle typeTitle, Description descripton, TypeId typeId)
         {
+            Id= id;
             TypeId = typeId;
             TypeTitle = typeTitle;
             Description = descripton;
