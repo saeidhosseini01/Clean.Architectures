@@ -38,8 +38,10 @@ namespace Clean.Architecture.Infrastructure.Repositories.Consts
       => _context.Const.Where(c => c.Id == id).FirstOrDefault();
 
 
-        public async Task<Const> GetConstByIdAsync(string key, CancellationToken cancellationToken)
+        public async Task<Const> GetConstByKeyAsync(string key, CancellationToken cancellationToken)
         => _context.Const.Where(c => c.Key == key).FirstOrDefault();
+
+        
 
         public async Task UpdateConstAsync(Const model, CancellationToken cancellationToken)
         {

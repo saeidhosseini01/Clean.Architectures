@@ -12,8 +12,8 @@ namespace Clean.Architecture.Domain.Interfaces.Consts
     {
         Task<List<Const>> GetAllConstAsync(CancellationToken cancellationToken);
         Task<Const> GetConstByIdAsync(Guid id,CancellationToken cancellationToken);
-        Task<Const> GetConstByIdAsync(string key,CancellationToken cancellationToken);
         Task<Const> GetConstByKeyAsync(string key,CancellationToken cancellationToken);
+       
         Task AddConstAsync(Const model,CancellationToken cancellationToken);
         Task UpdateConstAsync(Const model,CancellationToken cancellationToken);
     }
