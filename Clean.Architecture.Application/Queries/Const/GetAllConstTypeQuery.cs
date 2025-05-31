@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using Clean.Architecture.Application.Dtos.Common;
+using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;

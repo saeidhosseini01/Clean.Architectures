@@ -10,7 +10,8 @@ namespace Clean.Architecture.Application.Queries.Const
 {
     public class GetConstByIdQuery: IRequest<ConstDto>
     {
-        private readonly Guid id;
+        public readonly Guid id;
+
 
         public GetConstByIdQuery(Guid id)
         {
