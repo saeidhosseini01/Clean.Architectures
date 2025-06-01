@@ -2,6 +2,7 @@
 using Clean.Architecture.Application.Command.Const;
 using Clean.Architecture.Application.Dtos.Common;
 using Clean.Architecture.Domain.Entities.Common;
+using Clean.Architecture.Domain.Exeptions.NotFount;
 using Clean.Architecture.Domain.Interfaces.Consts;
 using MediatR;
 using System;
@@ -23,46 +24,40 @@ namespace Clean.Architecture.Application.Handlers.CommandHandler.Consts
          _mapper = mapper;
         }
 
+        //public async Task<ConstDto> Handle(UpdateConstCommand request, CancellationToken cancellationToken)
+        //{
+        //    Const res =await  _constRepository.GetConstByIdAsync(request.Id, cancellationToken);
+        //    if(res is null) { }
+        //    res.Order=request.Order;
+        //    res.Name=request.Name;
+        //    res.Description=request.Description;    
+        //    res.Key=request.Key;
+        //    await _constRepository.UpdateConstAsync(res, cancellationToken);
+        //    return _mapper.Map<ConstDto>(await  _constRepository.GetConstByIdAsync(request.Id, cancellationToken));
+
+        //}
         public async Task<ConstDto> Handle(UpdateConstCommand request, CancellationToken cancellationToken)
         {
-            Const res =await  _constRepository.GetConstByIdAsync(request.Id, cancellationToken);
-            if(res is null) { }
-            res.Order=request.Order;
-            res.Name=request.Name;
-            res.Description=request.Description;    
-            res.Key=request.Key;
-            await _constRepository.UpdateConstAsync(res, cancellationToken);
-            return _mapper.Map<ConstDto>( _constRepository.GetConstByIdAsync(request.Id, cancellationToken));
+            var res = await _constRepository.GetConstByIdAsync(request.Id, cancellationToken);
+            if (res == null)
+            {
+                throw new NotFountEntityExeption();
+            }
 
-        }
-    }
-
-
-
-
-    public class UpdateConstTypeCommandHandler : IRequestHandler<UpdateConstTypeCommand, ConstTypeDto>
-    {
-        private readonly IConstTypeRepository _constTypeRepository;
-        private readonly IMapper _mapper;
-
-        public UpdateConstTypeCommandHandler(IConstTypeRepository constTypeRepository, IMapper mapper)
-        {
-            _constTypeRepository = constTypeRepository;
-            _mapper = mapper;
-        }
-
-        public async Task<ConstTypeDto> Handle(UpdateConstTypeCommand request, CancellationToken cancellationToken)
-        {
-            ConstType res = await _constTypeRepository.GetConstTypeByIdAsync(request.Id, cancellationToken);
-            if (res is null) { }
-          
-            res.TypeTitle = request.TypeTitle;
+            res.Order = request.Order;
+            res.Name = request.Name;
             res.Description = request.Description;
-            res.TypeId = request.TypeId;
-            await _constTypeRepository.UpdateConstTypeAsync(res, cancellationToken);
-            return _mapper.Map<ConstTypeDto>(_constTypeRepository.GetConstTypeByIdAsync(request.Id, cancellationToken));
+            res.Key = request.Key;
 
+            await _constRepository.UpdateConstAsync(res, cancellationToken);
+
+           
+            return _mapper.Map<ConstDto>(res);
         }
+
+
+       
+
     }
 
 }

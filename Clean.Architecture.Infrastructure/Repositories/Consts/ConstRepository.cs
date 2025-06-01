@@ -2,6 +2,7 @@
 using Clean.Architecture.Application.Mappings;
 using Clean.Architecture.Domain.Entities.Common;
 using Clean.Architecture.Domain.Exeptions;
+using Clean.Architecture.Domain.Exeptions.NotFount;
 using Clean.Architecture.Domain.Interfaces.Consts;
 using Clean.Architecture.Domain.ValueObject.User;
 using Clean.Architecture.Persistence.ApiDbContext;
@@ -41,18 +42,11 @@ namespace Clean.Architecture.Infrastructure.Repositories.Consts
         public async Task<Const> GetConstByKeyAsync(string key, CancellationToken cancellationToken)
         => _context.Const.Where(c => c.Key == key).FirstOrDefault();
 
-        
+
 
         public async Task UpdateConstAsync(Const model, CancellationToken cancellationToken)
         {
-            var res = _context.Const.Where(c => c.Id == model.Id).FirstOrDefault();
-            if (res == null) throw new NotFountUserExeption();
-            res.Description = model.Description;
-            res.ConstTypeIds = model.ConstTypeIds;
-            res.Order = model.Order;
-            res.Key = model.Key;
-            res.Name = model.Name;
-
+            _context.Const.Update(model);
             await _context.SaveChangesAsync(cancellationToken);
         }
     }

@@ -32,8 +32,15 @@ namespace Clean.Architecture.Persistence.ApiDbContext
                 entity.Property(e => e.Id);
                 entity.HasKey(e => e.Id);
             });
+            modelBuilder.Entity<ConstType>(entity =>
+            {
+                entity.ToTable("ConstType", schema: "CNT");
+                entity.Property(e => e.Id);
+                entity.HasKey(e => e.Id);
+            });
         }
         public DbSet<User> User { get; set; }
         public DbSet<Const> Const { get; set; }
+        public DbSet<ConstType> ConstType{ get; set; }
     }
 }

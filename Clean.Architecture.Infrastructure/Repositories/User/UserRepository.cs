@@ -1,5 +1,6 @@
 ﻿using Clean.Architecture.Domain.Entities.User;
 using Clean.Architecture.Domain.Exeptions;
+using Clean.Architecture.Domain.Exeptions.NotFount;
 using Clean.Architecture.Domain.Interfaces.Users;
 using Clean.Architecture.Persistence.ApiDbContext;
 using Microsoft.EntityFrameworkCore;
@@ -38,12 +39,7 @@ namespace Clean.Architecture.Infrastructure.Repositories.Users
 
         public async Task UpdateUserAsync(User user, CancellationToken cancellationToken)
         {
-            var found = await _context.User.FindAsync([user.Id], cancellationToken);
-            if (found == null) throw new NotFountUserExeption();
-
-            found.Age = user.Age;
-            found.Name = user.Name;
-            found.family = user.family;
+            _context.Update(user);
             await _context.SaveChangesAsync(cancellationToken);
 
         }
