@@ -29,6 +29,13 @@ namespace Clean.Architecture.WebApi.Controllers
             var res = await _mediator.Send(query, cancellationToken);
             return Ok(res);
         }
+        public async Task<Action<ConstType>> GetConstTypeByKey(string key,CancellationToken cancellationToken)
+        {
+           var query=new GetConstByKeyQuery(key);
+            var res=await _mediator.Send(query,cancellationToken);
+            return Ok(res);
+
+        }
 
     }
 }
