@@ -15,6 +15,7 @@ namespace Clean.Architecture.Persistence.ApiDbContext
 {
 
 
+
     public class ApiDbContexts(DbContextOptions<ApiDbContexts> options):DbContext(options)
     {
         protected override void OnModelCreating(ModelBuilder modelBuilder)
