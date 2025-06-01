@@ -1,4 +1,5 @@
-﻿using Clean.Architecture.Domain.Entities.Common;
+﻿using Clean.Architecture.Application.Queries.Const;
+using Clean.Architecture.Domain.Entities.Common;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,6 +15,21 @@ namespace Clean.Architecture.WebApi.Controllers
             _mediator = mediator;
             _logger = logger;
         }
+        [HttpGet("GetAllConst")]
+        public  async Task<ActionResult<List<Const>>> GetAllConst(CancellationToken cancellationToken)
+        {
+            var query=new GetAllConstQuery();
+            var res= await _mediator.Send(query,cancellationToken);
+            return Ok(res);
+        }
+        [HttpGet("GetConstById")]
+        public async Task<ActionResult<Const>> GetConstById(Guid id, CancellationToken cancellationToken)
+        {
+            var query = GetConstById(id, cancellationToken);
+            var res=await _mediator.Send(query, cancellationToken);
+            return Ok(res);
+        }
+
 
     }
 }
