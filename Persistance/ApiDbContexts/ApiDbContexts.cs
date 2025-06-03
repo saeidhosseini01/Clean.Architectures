@@ -24,17 +24,22 @@ namespace Clean.Architecture.Persistence.ApiDbContext
             {
                 user.ToTable("Users", schema: "AUTH");
                 user.Property(e => e.Id).ValueGeneratedOnAdd();
+                user.Property(e => e.IsDeleted).HasDefaultValue(false);
                 user.HasKey(e => e.Id);
             });
             modelBuilder.Entity<Const>(entity =>
             {
                 entity.ToTable("Const", schema: "CNT");
                 entity.Property(e => e.Id);
+                entity.Property(e => e.IsDeleted).HasDefaultValue(false);
                 entity.HasKey(e => e.Id);
             });
             modelBuilder.Entity<ConstType>(entity =>
             {
                 entity.ToTable("ConstType", schema: "CNT");
+                entity.Property(e => e.TypeId).IsRequired();
+                entity.HasIndex(e=>e.TypeId).IsUnique(); 
+                entity.Property(e=>e.IsDeleted).HasDefaultValue(false);
                 entity.Property(e => e.Id);
                 entity.HasKey(e => e.Id);
             });
