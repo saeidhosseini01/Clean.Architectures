@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -13,9 +13,16 @@ import { RouterModule } from '@angular/router';
   ],
   styleUrls: ['./header.component.css'] // یا .scss اگر از scss استفاده می‌کنی
 })
-export class HeaderComponent {
+export class HeaderComponent  implements OnInit{
+  hederTitls : string[] =['خانه', 'درباره ما', 'تماس با ما'];
+    
+   constructor(
+  ) { }
+  ngOnInit(): void {
+    
+  }
   
-  // 🔹 باز کردن دیالوگ ثبت‌نام
+  
   openRegisterDialog(): void {
     // اینجا باید logic مربوط به باز کردن دیالوگ ثبت‌نام را قرار دهی
     // مثلاً با Material Dialog یا هر دیالوگ سفارشی
