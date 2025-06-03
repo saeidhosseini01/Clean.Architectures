@@ -4,31 +4,30 @@ import { RouterModule } from '@angular/router';
 import { HeaderItem } from '../../interface/header-item';
 import { ConstService } from '../../services/common/const-services.service';
 
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
     standalone: true,
     imports: [
     RouterModule,
-  
+ 
      CommonModule
   ],
-  styleUrls: ['./header.component.css'] // یا .scss اگر از scss استفاده می‌کنی
+  styleUrls: ['./header.component.css'] 
 })
 export class HeaderComponent  implements OnInit{
-  hederTitls : HeaderItem[] =[];
+  headerTitles : HeaderItem[] =[];
     selectedid:number=0;
    constructor(private constServices:ConstService
   ) { 
-
-
   }
   ngOnInit(): void {
     this.LoadHeader();
   }
   LoadHeader():void {
     this.constServices.getHeader().subscribe({
-      next:(data) => this.hederTitls=data,
+      next:(data) => { console.log('✅ داده دریافتی:', data);this.headerTitles=data},
       error :(err) => console.error('عملیات با خطا مواجه شد',err)
     })
   }

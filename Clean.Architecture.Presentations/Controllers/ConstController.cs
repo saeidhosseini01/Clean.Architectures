@@ -5,6 +5,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Clean.Architecture.WebApi.Controllers
 {
+
+    [Route("api/[controller]")]
+    [ApiController]
     public class ConstController : Controller
     {
         private readonly IMediator _mediator;

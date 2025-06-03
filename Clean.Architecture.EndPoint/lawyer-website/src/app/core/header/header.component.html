@@ -3,11 +3,12 @@
     <nav class="navbar">
       <div class="nav-right">
         <ul class="nav-links">
-          <li><a href="#" class="active">خانه</a></li>
-          <li><a href="#">درباره</a></li>
-          <li><a href="#">خدمات</a></li>
-          <li><a href="#">تماس</a></li>
+           <li *ngFor="let item of headerTitles">
+  <a >{{ item.name | json}}</a>
+</li>
+          
         </ul>
+      
       </div>
       <div class="nav-left">
         <a href="#" class="btn login">ورود</a>

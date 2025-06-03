@@ -36,7 +36,9 @@ void ConfigureServices(IServiceCollection services, IConfiguration configuration
      cfg.RegisterServicesFromAssembly(typeof(GetAllUsersQueryHandler).Assembly)
  );
     services.AddScoped<IUserRepository, UserRepository>();
+    services.AddScoped<IConstTypeRepository, ConstTypeRepository>();
     services.AddScoped<IConstRepository, ConstRepository>();
+    
 
     services.AddDbContext<ApiDbContexts>(options =>
         options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),sqlpots=>sqlpots.EnableRetryOnFailure()));

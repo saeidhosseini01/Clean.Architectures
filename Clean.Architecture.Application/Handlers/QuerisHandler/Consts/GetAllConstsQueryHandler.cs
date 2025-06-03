@@ -19,7 +19,7 @@ namespace Clean.Architecture.Application.Handlers.QuerisHandler.Consts
         public GetAllConstsQueryHandler(IConstRepository constRepository,IMapper mapper)
         {
             this.constRepository = constRepository ?? throw new ArgumentNullException(nameof(constRepository));
-            mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
+            this.mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
         public async Task<List<ConstDto>> Handle(GetAllConstQuery request, CancellationToken cancellationToken)
         {
