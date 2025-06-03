@@ -2,6 +2,7 @@
 using Clean.Architecture.Application.Dtos.User;
 using Clean.Architecture.Application.Queries.User;
 using Clean.Architecture.Domain.Exeptions;
+using Clean.Architecture.Domain.Exeptions.NotFount;
 using Clean.Architecture.Domain.Interfaces.Users;
 using MediatR;
 using System;

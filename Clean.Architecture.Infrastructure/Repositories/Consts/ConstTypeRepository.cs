@@ -1,5 +1,4 @@
-﻿using Clean.Architecture.Application.Exeption;
-using Clean.Architecture.Domain.Entities.Common;
+﻿using Clean.Architecture.Domain.Entities.Common;
 using Clean.Architecture.Domain.Exeptions.NotFount;
 using Clean.Architecture.Domain.Interfaces.Consts;
 using Clean.Architecture.Persistence.ApiDbContext;

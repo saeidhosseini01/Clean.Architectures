@@ -22,7 +22,7 @@ namespace Clean.Architecture.Persistence.ApiDbContext
         {
             modelBuilder.Entity<User>(user =>
             {
-                user.ToTable("Users", schema: "auth");
+                user.ToTable("Users", schema: "AUTH");
                 user.Property(e => e.Id).ValueGeneratedOnAdd();
                 user.HasKey(e => e.Id);
             });
