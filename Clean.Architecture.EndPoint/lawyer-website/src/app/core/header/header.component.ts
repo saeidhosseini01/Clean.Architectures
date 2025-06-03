@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { HeaderItem } from '../../interface/header-item';
+import { ConstService } from '../../services/common/const-services.service';
 
 @Component({
   selector: 'app-header',
@@ -14,14 +16,22 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./header.component.css'] // یا .scss اگر از scss استفاده می‌کنی
 })
 export class HeaderComponent  implements OnInit{
-  hederTitls : string[] =['خانه', 'درباره ما', 'تماس با ما'];
-    
-   constructor(
-  ) { }
-  ngOnInit(): void {
-    
+  hederTitls : HeaderItem[] =[];
+    selectedid:number=0;
+   constructor(private constServices:ConstService
+  ) { 
+
+
   }
-  
+  ngOnInit(): void {
+    this.LoadHeader();
+  }
+  LoadHeader():void {
+    this.constServices.getHeader().subscribe({
+      next:(data) => this.hederTitls=data,
+      error :(err) => console.error('عملیات با خطا مواجه شد',err)
+    })
+  }
   
   openRegisterDialog(): void {
     // اینجا باید logic مربوط به باز کردن دیالوگ ثبت‌نام را قرار دهی
