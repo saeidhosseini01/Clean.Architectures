@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { ConstService } from '../../services/common/const-services.service';
+import { ConstItem } from '../../interface/const-item';
 
 @Component({
   selector: 'app-footer',
@@ -13,6 +15,27 @@ import { RouterModule } from '@angular/router';
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.css']
 })
-export class FooterComponent {
-  currentYear: number = new Date().getFullYear();
+
+
+
+
+
+export class FooterComponent  implements OnInit {
+  footerTitle:ConstItem[]=[];
+  selectedid:number=0;
+  
+    constructor( private constServices:ConstService ) {
+    }
+  ngOnInit(): void {
+this.Loadfooter()
+    
+  }
+
+  Loadfooter(){
+ this.constServices.getConstByKey('footer').subscribe({
+  next:(value)=> {(value);this.footerTitle=value},
+      error :(err) => console.error('عملیات با خطا مواجه شد',err)
+ })
+
+  }
 }

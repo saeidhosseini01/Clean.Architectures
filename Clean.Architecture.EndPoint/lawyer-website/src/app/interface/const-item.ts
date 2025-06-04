@@ -1,4 +1,4 @@
-export interface HeaderItem {
+export interface ConstItem {
  id: number;
   title: string;
   name:string;

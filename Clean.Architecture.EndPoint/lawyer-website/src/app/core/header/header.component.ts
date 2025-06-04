@@ -17,7 +17,7 @@ import { ConstService } from '../../services/common/const-services.service';
   styleUrls: ['./header.component.css'] 
 })
 export class HeaderComponent  implements OnInit{
-  headerTitles : HeaderItem[] =[];
+  headerTitles : ConstItem[] =[];
     selectedid:number=0;
    constructor(private constServices:ConstService
   ) { 
@@ -26,8 +26,8 @@ export class HeaderComponent  implements OnInit{
     this.LoadHeader();
   }
   LoadHeader():void {
-    this.constServices.getHeader().subscribe({
-      next:(data) => { console.log('✅ داده دریافتی:', data);this.headerTitles=data},
+    this.constServices.getConstByKey('header').subscribe({
+      next:(data) => {(data);this.headerTitles=data},
       error :(err) => console.error('عملیات با خطا مواجه شد',err)
     })
   }

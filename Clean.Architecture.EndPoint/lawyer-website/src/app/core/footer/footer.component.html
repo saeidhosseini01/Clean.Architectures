@@ -1,12 +1,12 @@
+
 <footer class="footer">
   <div class="footer-container">
     <div class="footer-left">
       <p>&copy; {{ currentYear }} تمامی حقوق محفوظ است | وب‌سایت حقوقی</p>
     </div>
     <div class="footer-right">
-      <a href="#">درباره ما</a>
-      <a href="#">تماس با ما</a>
-      <a href="#">حریم خصوصی</a>
-    </div>
+  <a *ngFor="let link of footerTitle" [href]="link.url">{{ link.title }}</a>
+</div>
   </div>
 </footer>
+s
