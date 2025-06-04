@@ -1,4 +1,5 @@
-﻿using Clean.Architecture.Application.Queries.Const;
+﻿using Clean.Architecture.Application.Dtos.Base;
+using Clean.Architecture.Application.Queries.Const;
 using Clean.Architecture.Domain.Entities.Common;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -33,6 +34,12 @@ namespace Clean.Architecture.WebApi.Controllers
             return Ok(res);
         }
 
+        public async Task<ActionResult<TValue<Guid>>> GetConstByKey(string key,CancellationToken cancellationToken)
 
+        {
+            var guery=GetConstByKey(key,cancellationToken);
+            var res=_mediator.Send(guery, cancellationToken);
+            return Ok(res);
+        }
     }
 }
