@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Clean.Architecture.Application.Dtos.Base;
 using Clean.Architecture.Application.Mappings;
 using Clean.Architecture.Domain.Entities.Common;
 using Clean.Architecture.Domain.Exeptions;
@@ -39,8 +40,21 @@ namespace Clean.Architecture.Infrastructure.Repositories.Consts
       => _context.Const.Where(c => c.Id == id).FirstOrDefault();
 
 
-        public async Task<Const> GetConstByKeyAsync(string key, CancellationToken cancellationToken)
-        => _context.Const.Where(c => c.Key == key).FirstOrDefault();
+        public async Task<List<TValue<Guid>>> GetConstByKeyAsync(string key, CancellationToken cancellationToken)
+        {
+            var result = await (
+                from cnt in _context.Const
+                join cntyp in _context.ConstType on cnt.ConstTypeId equals cntyp.TypeId
+                where cntyp.Key == key
+                select new TValue<Guid>
+                {
+                    Value = cnt.Id,
+                    Title = cnt.Name,
+                }
+            ).ToListAsync(cancellationToken);
+
+            return result;
+        }
 
 
 
@@ -49,5 +63,7 @@ namespace Clean.Architecture.Infrastructure.Repositories.Consts
             _context.Const.Update(model);
             await _context.SaveChangesAsync(cancellationToken);
         }
+
+       
     }
 }
