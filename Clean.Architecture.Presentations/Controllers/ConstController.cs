@@ -33,12 +33,12 @@ namespace Clean.Architecture.WebApi.Controllers
             var res=await _mediator.Send(query, cancellationToken);
             return Ok(res);
         }
-
-        public async Task<ActionResult<TValue<Guid>>> GetConstByKey(string key,CancellationToken cancellationToken)
+        [HttpGet("GetConstByKey")]
+        public async Task<ActionResult<TValue<string>>> GetConstByKeys(string key,CancellationToken cancellationToken)
 
         {
-            var guery=GetConstByKey(key,cancellationToken);
-            var res=_mediator.Send(guery, cancellationToken);
+            var guery= new GetConstByKeyQuery(key);
+            var res= await  _mediator.Send(guery, cancellationToken);
             return Ok(res);
         }
     }

@@ -40,15 +40,15 @@ namespace Clean.Architecture.Infrastructure.Repositories.Consts
       => _context.Const.Where(c => c.Id == id).FirstOrDefault();
 
 
-        public async Task<List<TValue<Guid>>> GetConstByKeyAsync(string key, CancellationToken cancellationToken)
+        public async Task<List<TValue<string>>> GetConstByKeyAsync(string key, CancellationToken cancellationToken)
         {
             var result = await (
                 from cnt in _context.Const
                 join cntyp in _context.ConstType on cnt.ConstTypeId equals cntyp.TypeId
                 where cntyp.Key == key
-                select new TValue<Guid>
+                select new TValue<string>
                 {
-                    Value = cnt.Id,
+                    Value = cnt.Id.ToString(),
                     Title = cnt.Name,
                 }
             ).ToListAsync(cancellationToken);

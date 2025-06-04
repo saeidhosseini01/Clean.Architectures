@@ -1,10 +1,18 @@
 <aside class="sidebar">
   <div class="sidebar-title">منو</div>
   <ul class="sidebar-links">
-    <li><a routerLink="/dashboard" routerLinkActive="active">داشبورد</a></li>
-    <li><a routerLink="/messages" routerLinkActive="active">پیام‌ها</a></li>
-    <li><a routerLink="/notifications" routerLinkActive="active">اعلان‌ها</a></li>
-    <li><a routerLink="/users" routerLinkActive="active">کاربران</a></li>
-    <li><a routerLink="/settings" routerLinkActive="active">تنظیمات</a></li>
+   
+          
+
+
+
+
+
+
+
+           <li *ngFor="let item of sidebar">
+  <a >{{ item.title  | json}}</a>
+</li>
+          
   </ul>
 </aside>

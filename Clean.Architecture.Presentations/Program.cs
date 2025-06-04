@@ -10,6 +10,7 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
+using System.Text.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -38,7 +39,11 @@ void ConfigureServices(IServiceCollection services, IConfiguration configuration
     services.AddScoped<IUserRepository, UserRepository>();
     services.AddScoped<IConstTypeRepository, ConstTypeRepository>();
     services.AddScoped<IConstRepository, ConstRepository>();
-    
+    services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
+    });
 
     services.AddDbContext<ApiDbContexts>(options =>
         options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),sqlpots=>sqlpots.EnableRetryOnFailure()));

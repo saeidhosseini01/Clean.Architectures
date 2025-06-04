@@ -1,8 +1,7 @@
 export interface ConstItem {
- id: number;
-  title: string;
-  name:string;
-  key:string;
+  value?: string;
+  title?: string;
+  description?: string;
+  intData?: number;
+  stringData?: string;
 }
-
-

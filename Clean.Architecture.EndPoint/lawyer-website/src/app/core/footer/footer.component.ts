@@ -21,6 +21,7 @@ import { ConstItem } from '../../interface/const-item';
 
 
 export class FooterComponent  implements OnInit {
+   currentYear: number = new Date().getFullYear();
   footerTitle:ConstItem[]=[];
   selectedid:number=0;
   

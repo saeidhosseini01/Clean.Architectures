@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { HeaderItem } from '../../interface/header-item';
+
 import { ConstService } from '../../services/common/const-services.service';
+import { ConstItem } from '../../interface/const-item';
 
 
 @Component({
@@ -27,7 +28,7 @@ export class HeaderComponent  implements OnInit{
   }
   LoadHeader():void {
     this.constServices.getConstByKey('header').subscribe({
-      next:(data) => {(data);this.headerTitles=data},
+      next:(data) => {;this.headerTitles=data},
       error :(err) => console.error('عملیات با خطا مواجه شد',err)
     })
   }

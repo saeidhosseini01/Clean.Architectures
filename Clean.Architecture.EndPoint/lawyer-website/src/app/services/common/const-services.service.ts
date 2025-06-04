@@ -1,8 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { HeaderItem } from '../../interface/header-item';
-import { environment } from '../../../environment/environment'
+
+import { ConstItem } from '../../interface/const-item';
+import { environment } from '../../../environment/environment';
+
+
+
 
 
 
@@ -16,8 +20,9 @@ export class ConstService {
 
   constructor(private http: HttpClient) {}
 
-  getHeader(key: string): Observable<HeaderItem[]> {
-    const url = `${this.baseUrl}/api/Const/getallconst?key=${encodeURIComponent(key)}`;
-    return this.http.get<HeaderItem[]>(url);
+ public getConstByKey(key: string): Observable<ConstItem[]> {
+    const url = `${this.baseUrl}/Const/GetConstByKey?key=${encodeURIComponent(key)}`;
+    return this.http.get<ConstItem[]>(url);
   }
+  
 }
