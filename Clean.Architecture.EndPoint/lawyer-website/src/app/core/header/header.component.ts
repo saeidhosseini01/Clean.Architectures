@@ -30,7 +30,6 @@ export class HeaderComponent  implements OnInit{
   LoadHeader():void {
     this.constServices.getConstByKey('header').subscribe({
     next: (data) => {
-  console.log('دریافت شد:', data);
   this.headerTitles = data;
 },
       error :(err) => console.error('عملیات با خطا مواجه شد',err)

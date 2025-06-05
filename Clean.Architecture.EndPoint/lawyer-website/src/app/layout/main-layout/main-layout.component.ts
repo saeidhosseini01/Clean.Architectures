@@ -30,7 +30,7 @@ import { FooterComponent } from '../../core/footer/footer.component';
   imports: [
     RouterModule,
     MatDialogModule,FormsModule, MatInputModule, MatButtonModule, FormsModule,
-     CommonModule, RouterOutlet,HeaderComponent
+     CommonModule, RouterOutlet,HeaderComponent,FooterComponent,SidebarComponent
   ],
   templateUrl: './main-layout.component.html',
   styleUrls: ['./main-layout.component.css']
