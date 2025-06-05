@@ -9,6 +9,7 @@ using Clean.Architecture.WebApi.EndPoint;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.OpenApi.Models;
 using System.Reflection;
 using System.Text.Json;
 
@@ -44,6 +45,22 @@ void ConfigureServices(IServiceCollection services, IConfiguration configuration
     {
         options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
     });
+    services.AddSwaggerGen();
+    builder.Services.AddSwaggerGen(c =>
+    {
+        c.SwaggerDoc("v1", new OpenApiInfo
+        {
+            Title = "Clean.Architecture API",
+            Version = "v1",
+            Description = "Explanation about API",
+            Contact = new OpenApiContact
+            {
+                Name = "saeed hosseini",
+                Email = "SeyedSaeisHosseini1990@Gmail.com",
+                Url = new Uri("https://xxxx.com")
+            }
+        });
+    });
 
     services.AddDbContext<ApiDbContexts>(options =>
         options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),sqlpots=>sqlpots.EnableRetryOnFailure()));
@@ -72,15 +89,11 @@ void ConfigureMiddleware(WebApplication app)
     app.UseStatusCodePages();
     app.UseDeveloperExceptionPage();
     app.UseCors();
-    //app.UseSpa(spa =>
-    //{
-    //    spa.Options.SourcePath = "ClientApp";
-
-    //    if (app.Environment.IsDevelopment())
-    //    {
-    //        // ?? ???? ?????? ?? ng serve ??? ????
-    //        spa.UseProxyToSpaDevelopmentServer("http://localhost:4200");
-    //    }
-    //});
-
+    app.UseSwagger();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+        c.RoutePrefix = string.Empty;
+    });
+   
 }
