@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Clean.Architecture.Application.Dtos.Base;
 using Clean.Architecture.Application.Dtos.Common;
 using Clean.Architecture.Application.Queries.Const;
 using Clean.Architecture.Domain.Interfaces.Consts;
@@ -6,7 +7,7 @@ using MediatR;
 
 namespace Clean.Architecture.Application.Handlers.QuerisHandler.Consts
 {
-    public class GetConstByKeyQueryHandler : IRequestHandler<GetConstByKeyQuery, ConstDto>
+    public class GetConstByKeyQueryHandler : IRequestHandler<GetConstByKeyQuery, List<TValue<string>>>
     {
         private readonly IConstRepository _constRepository;
         private readonly IMapper _mapper;
@@ -17,10 +18,10 @@ namespace Clean.Architecture.Application.Handlers.QuerisHandler.Consts
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
-        public async Task<ConstDto> Handle(GetConstByKeyQuery request, CancellationToken cancellationToken)
+        public async Task<List<TValue<string>>> Handle(GetConstByKeyQuery request, CancellationToken cancellationToken)
         {
             var entity = await _constRepository.GetConstByKeyAsync(request.key, cancellationToken);
-            return _mapper.Map<ConstDto>(entity);
+            return _mapper.Map<List<TValue<string>>>(entity);
         }
     }
 }

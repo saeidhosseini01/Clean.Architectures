@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-import { ConstItem } from '../../interface/const-item';
 import { environment } from '../../../environment/environment';
+import { TValue } from '../../interface/TValue';
 
 
 
@@ -20,9 +20,9 @@ export class ConstService {
 
   constructor(private http: HttpClient) {}
 
- public getConstByKey(key: string): Observable<ConstItem[]> {
+ public getConstByKey(key: string): Observable<TValue<string>[]> {
     const url = `${this.baseUrl}/Const/GetConstByKey?key=${encodeURIComponent(key)}`;
-    return this.http.get<ConstItem[]>(url);
+    return this.http.get<TValue<string>[]>(url);
   }
   
 }

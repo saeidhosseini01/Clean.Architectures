@@ -1,4 +1,5 @@
-﻿using Clean.Architecture.Application.Dtos.Common;
+﻿using Clean.Architecture.Application.Dtos.Base;
+using Clean.Architecture.Application.Dtos.Common;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Clean.Architecture.Application.Queries.Const
 {
-    public class GetConstByKeyQuery:IRequest<ConstDto>
+    public class GetConstByKeyQuery:IRequest<List<TValue<string>>>
     {
         public readonly string key;
 

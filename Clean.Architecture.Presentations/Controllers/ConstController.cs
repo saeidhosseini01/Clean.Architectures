@@ -34,7 +34,7 @@ namespace Clean.Architecture.WebApi.Controllers
             return Ok(res);
         }
         [HttpGet("GetConstByKey")]
-        public async Task<ActionResult<TValue<string>>> GetConstByKeys(string key,CancellationToken cancellationToken)
+        public async Task<ActionResult<List<TValue<string>>>> GetConstByKeys(string key,CancellationToken cancellationToken)
 
         {
             var guery= new GetConstByKeyQuery(key);

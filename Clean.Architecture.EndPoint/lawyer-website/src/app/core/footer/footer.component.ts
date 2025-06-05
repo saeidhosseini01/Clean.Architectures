@@ -2,14 +2,14 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ConstService } from '../../services/common/const-services.service';
-import { ConstItem } from '../../interface/const-item';
+import { TValue } from '../../interface/TValue';
+
 
 @Component({
   selector: 'app-footer',
     standalone: true,
     imports: [
     RouterModule,
-  
      CommonModule
   ],
   templateUrl: './footer.component.html',
@@ -22,7 +22,7 @@ import { ConstItem } from '../../interface/const-item';
 
 export class FooterComponent  implements OnInit {
    currentYear: number = new Date().getFullYear();
-  footerTitle:ConstItem[]=[];
+  footerTitle:TValue<string>[]=[];
   selectedid:number=0;
   
     constructor( private constServices:ConstService ) {

@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { ConstService } from '../../services/common/const-services.service';
-import { ConstItem } from '../../interface/const-item';
+import { TValue } from '../../interface/TValue';
+
 
 
 @Component({
@@ -18,7 +19,7 @@ import { ConstItem } from '../../interface/const-item';
   styleUrls: ['./header.component.css'] 
 })
 export class HeaderComponent  implements OnInit{
-  headerTitles : ConstItem[] =[];
+  headerTitles : TValue<string>[] =[];
     selectedid:number=0;
    constructor(private constServices:ConstService
   ) { 
@@ -28,7 +29,10 @@ export class HeaderComponent  implements OnInit{
   }
   LoadHeader():void {
     this.constServices.getConstByKey('header').subscribe({
-      next:(data) => {;this.headerTitles=data},
+    next: (data) => {
+  console.log('دریافت شد:', data);
+  this.headerTitles = data;
+},
       error :(err) => console.error('عملیات با خطا مواجه شد',err)
     })
   }

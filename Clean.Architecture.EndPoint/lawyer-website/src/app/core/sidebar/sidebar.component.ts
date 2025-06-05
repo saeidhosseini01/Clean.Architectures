@@ -2,7 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ConstService } from '../../services/common/const-services.service';
-import { ConstItem } from '../../interface/const-item';
+import { TValue } from '../../interface/TValue';
+
 
 
 
@@ -25,7 +26,7 @@ export class SidebarComponent implements OnInit {
   
 
   }
-sidebar:ConstItem[]=[];
+sidebar:TValue<string>[]=[];
 selected:number=0;
 
 
