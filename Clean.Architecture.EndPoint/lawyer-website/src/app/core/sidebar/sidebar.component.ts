@@ -9,39 +9,33 @@ import { TValue } from '../../interface/TValue';
 
 @Component({
   selector: 'app-sidebar',
-    standalone: true,
-    imports: [
+  standalone: true,
+  imports: [
     RouterModule,
-  
-     CommonModule
+
+    CommonModule
   ],
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css']
 })
-
-
 export class SidebarComponent implements OnInit {
-
-  constructor(private constServices:ConstService)  {
-  
-
+  constructor(private constServices: ConstService) {
   }
-sidebar:TValue<string>[]=[];
-selected:number=0;
+  sidebar: TValue<string>[] = [];
+  selected: number = 0;
 
 
   ngOnInit(): void {
-   this.LoadsideBar();
+    this.LoadsideBar();
   }
-
   LoadsideBar() {
-  this.constServices.getConstByKey('sidebar').subscribe({
-    next: (value) => {
-      console.log('داده‌های دریافتی برای sidebar:', value);  // ✅ این خط لاگ رو اضافه کردیم
-      this.sidebar = value;
-    },
-    error: (err) => console.error('عملیات با خطا مواجه شد:', err)
-  });
-}
+    this.constServices.getConstByKey('sidebar').subscribe({
+      next: (value) => {
+        console.log('داده‌های دریافتی برای sidebar:', value);  // ✅ این خط لاگ رو اضافه کردیم
+        this.sidebar = value;
+      },
+      error: (err) => console.error('عملیات با خطا مواجه شد:', err)
+    });
+  }
 
 }

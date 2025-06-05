@@ -7,10 +7,10 @@ import { TValue } from '../../interface/TValue';
 
 @Component({
   selector: 'app-footer',
-    standalone: true,
-    imports: [
+  standalone: true,
+  imports: [
     RouterModule,
-     CommonModule
+    CommonModule
   ],
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.css']
@@ -20,23 +20,23 @@ import { TValue } from '../../interface/TValue';
 
 
 
-export class FooterComponent  implements OnInit {
-   currentYear: number = new Date().getFullYear();
-  footerTitle:TValue<string>[]=[];
-  selectedid:number=0;
-  
-    constructor( private constServices:ConstService ) {
-    }
+export class FooterComponent implements OnInit {
+  currentYear: number = new Date().getFullYear();
+  footerTitle: TValue<string>[] = [];
+  selectedid: number = 0;
+
+  constructor(private constServices: ConstService) {
+  }
   ngOnInit(): void {
-this.Loadfooter()
-    
+    this.Loadfooter()
+
   }
 
-  Loadfooter(){
- this.constServices.getConstByKey('footer').subscribe({
-  next:(value)=> {(value);this.footerTitle=value},
-      error :(err) => console.error('عملیات با خطا مواجه شد',err)
- })
+  Loadfooter() {
+    this.constServices.getConstByKey('footer').subscribe({
+      next: (value) => { (value); this.footerTitle = value },
+      error: (err) => console.error('عملیات با خطا مواجه شد', err)
+    })
 
   }
 }

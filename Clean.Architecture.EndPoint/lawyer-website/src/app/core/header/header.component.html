@@ -4,18 +4,12 @@
       <div class="nav-right">
         <ul class="nav-links">
 
+          <li *ngFor="let item of headerTitles">
+            <a>{{ item.title }}</a>
+          </li>
 
-
-
-
-
-          
-           <li *ngFor="let item of headerTitles">
-  <a >{{ item.title }}</a>
-</li>
-          
         </ul>
-      
+
       </div>
       <div class="nav-left">
         <a href="#" class="btn login">ورود</a>
@@ -23,6 +17,6 @@
       </div>
     </nav>
 
-    
+
   </div>
 </header>
