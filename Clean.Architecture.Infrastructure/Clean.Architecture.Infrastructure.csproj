@@ -10,7 +10,6 @@
     <Folder Include="BackGroundJob\" />
     <Folder Include="Data\" />
     <Folder Include="APIs\" />
-    <Folder Include="Services\" />
   </ItemGroup>
 
   <ItemGroup>

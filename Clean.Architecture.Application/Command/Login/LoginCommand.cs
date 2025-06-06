@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using Clean.Architecture.Domain.ValueObject.Login;
+using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,9 @@ namespace Clean.Architecture.Application.Command.Login
 {
     public class LoginCommand : IRequest<string>
     {
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public LoginCommand(string username, string password)
+        public UserName Username { get; set; }
+        public Password Password { get; set; }
+        public LoginCommand(UserName username, Password password)
         {
             
             this.Username = username;
