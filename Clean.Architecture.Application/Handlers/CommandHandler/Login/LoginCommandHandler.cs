@@ -8,8 +8,11 @@ using System.Threading.Tasks;
 
 namespace Clean.Architecture.Application.Handlers.CommandHandler.Login
 {
-    public class LoginCommandHandler:IRequestHandler<LoginCommand,string>
+    public class LoginCommandHandler : IRequestHandler<LoginCommand, string>
     {
-
+        public Task<string> Handle(LoginCommand request, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
