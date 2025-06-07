@@ -7,14 +7,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="UseCase s\**" />
+    <EmbeddedResource Remove="UseCase s\**" />
+    <None Remove="UseCase s\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Abstraction\Email\" />
     <Folder Include="Abstraction\Data\" />
-    <Folder Include="Contracts\" />
-    <Folder Include="Usecase\Todo\Queries\" />
-    <Folder Include="Usecase\Todo\Events\" />
-    <Folder Include="Usecase\Todo\Commands\" />
-    <Folder Include="Usecase\" />
     <Folder Include="Behaviors\" />
+    <Folder Include="UseCases\Consts\Constants\" />
+    <Folder Include="UseCases\Consts\Events\" />
+    <Folder Include="UseCases\Consts\Validations\" />
+    <Folder Include="UseCases\ConstTypes\Constants\" />
+    <Folder Include="UseCases\ConstTypes\Events\" />
+    <Folder Include="UseCases\ConstTypes\Validations\" />
+    <Folder Include="UseCases\Logins\Queris\" />
+    <Folder Include="UseCases\Users\Constants\" />
+    <Folder Include="UseCases\Users\Events\" />
   </ItemGroup>
 
   <ItemGroup>

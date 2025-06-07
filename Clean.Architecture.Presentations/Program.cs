@@ -1,6 +1,6 @@
-using Clean.Architecture.Application.FluentValidator.User;
-using Clean.Architecture.Application.Handlers.QuerisHandler.User;
 using Clean.Architecture.Application.Mappings;
+using Clean.Architecture.Application.Users.Handlers.QueryHandler;
+using Clean.Architecture.Application.Users.Valodattions;
 using Clean.Architecture.Domain.Interfaces.Consts;
 using Clean.Architecture.Domain.Interfaces.Users;
 using Clean.Architecture.Infrastructure.Repositories.Consts;
