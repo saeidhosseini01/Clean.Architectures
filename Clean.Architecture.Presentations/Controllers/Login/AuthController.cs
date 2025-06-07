@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using Clean.Architecture.Application.Command.Login;
-using Clean.Architecture.Application.RequestModel.Login;
+using Clean.Architecture.Application.UseCases.Logins.Commands;
+using Clean.Architecture.Application.UseCases.Logins.Dtos;
 using MediatR;
 using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;

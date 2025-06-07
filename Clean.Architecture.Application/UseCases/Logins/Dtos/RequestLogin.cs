@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Clean.Architecture.Application.RequestModel.Login
+namespace Clean.Architecture.Application.UseCases.Logins.Dtos
 {
     public class RequestLogin
     {

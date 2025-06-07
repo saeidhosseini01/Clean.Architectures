@@ -1,5 +1,5 @@
 ﻿using Clean.Architecture.Application.Dtos.Base;
-using Clean.Architecture.Application.Dtos.Common;
+
 using MediatR;
 using System;
 using System.Collections.Generic;

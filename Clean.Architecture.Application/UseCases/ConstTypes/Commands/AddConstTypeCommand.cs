@@ -1,9 +1,12 @@
-﻿using Clean.Architecture.Application.Dtos.Common;
+﻿
+using Clean.Architecture.Application.UseCases.ConstTypes.Dtos;
 using Clean.Architecture.Domain.ValueObject.ConstType;
 using Clean.Architecture.Domain.ValueObject.Genaric;
 using MediatR;
 
-namespace Clean.Architecture.Application.Command.Const
+
+
+namespace Clean.Architecture.Application.UseCases.ConstTypes.Commands
 {
     public class AddConstTypeCommand : IRequest<ConstTypeDto>
     {

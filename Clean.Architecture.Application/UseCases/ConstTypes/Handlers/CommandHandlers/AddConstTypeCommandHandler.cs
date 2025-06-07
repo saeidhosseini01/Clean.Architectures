@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using Clean.Architecture.Application.Command.Const;
-using Clean.Architecture.Application.Dtos.Common;
+using Clean.Architecture.Application.UseCases.ConstTypes.Commands;
+using Clean.Architecture.Application.UseCases.ConstTypes.Dtos;
 using Clean.Architecture.Domain.Entities.Common;
 using Clean.Architecture.Domain.Interfaces.Consts;
 using MediatR;
@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Clean.Architecture.Application.Handlers.CommandHandler.Consts
+namespace Clean.Architecture.Application.UseCases.ConstTypes.Handlers.CommandHandlers
 {
     public class AddConstTypeCommandHandler : IRequestHandler<AddConstTypeCommand, ConstTypeDto>
 

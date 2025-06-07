@@ -1,10 +1,11 @@
 ﻿using AutoMapper;
-using Clean.Architecture.Application.Dtos.Common;
-using Clean.Architecture.Application.Queries.Const;
+
+using Clean.Architecture.Application.UseCases.ConstTypes.Dtos;
+using Clean.Architecture.Application.UseCases.ConstTypes.Queris;
 using Clean.Architecture.Domain.Interfaces.Consts;
 using MediatR;
 
-namespace Clean.Architecture.Application.Handlers.QuerisHandler.Consts
+namespace Clean.Architecture.Application.UseCases.ConstTypes.Handlers.QueryHandlers
 {
     public class GetAllConstTypeQueryHandler : IRequestHandler<GetAllConstTypeQuery, List<ConstTypeDto>>
     {

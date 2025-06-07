@@ -1,4 +1,5 @@
-﻿using Clean.Architecture.Application.Dtos.Common;
+﻿
+using Clean.Architecture.Application.UseCases.Consts.Dtos;
 using MediatR;
 using System;
 using System.Collections.Generic;

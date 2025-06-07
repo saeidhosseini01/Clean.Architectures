@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
-using Clean.Architecture.Application.Command.Const;
-using Clean.Architecture.Application.Dtos.Common;
+
+using Clean.Architecture.Application.UseCases.Consts.Commands;
+using Clean.Architecture.Application.UseCases.Consts.Dtos;
 using Clean.Architecture.Domain.Entities.Common;
 using Clean.Architecture.Domain.Interfaces.Consts;
 using MediatR;

@@ -22,6 +22,7 @@
     <Folder Include="UseCases\ConstTypes\Constants\" />
     <Folder Include="UseCases\ConstTypes\Events\" />
     <Folder Include="UseCases\ConstTypes\Validations\" />
+    <Folder Include="UseCases\Logins\Handlers\QueryHandlers\" />
     <Folder Include="UseCases\Logins\Queris\" />
     <Folder Include="UseCases\Users\Constants\" />
     <Folder Include="UseCases\Users\Events\" />

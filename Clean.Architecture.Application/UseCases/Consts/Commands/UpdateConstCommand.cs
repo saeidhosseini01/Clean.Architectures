@@ -1,4 +1,4 @@
-﻿using Clean.Architecture.Application.Dtos.Common;
+﻿using Clean.Architecture.Application.UseCases.Consts.Dtos;
 using Clean.Architecture.Domain.ValueObject.Const;
 using Clean.Architecture.Domain.ValueObject.Genaric;
 

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Clean.Architecture.Application.Command.Login
+namespace Clean.Architecture.Application.UseCases.Logins.Commands
 {
     public class LoginCommand : IRequest<string>
     {

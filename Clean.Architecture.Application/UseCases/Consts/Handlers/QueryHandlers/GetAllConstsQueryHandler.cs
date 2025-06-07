@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using Clean.Architecture.Application.Dtos.Common;
-using Clean.Architecture.Application.Queries.Const;
+using Clean.Architecture.Application.UseCases.Consts.Dtos;
+using Clean.Architecture.Application.UseCases.Consts.Queris;
 using Clean.Architecture.Domain.Interfaces.Consts;
 using MediatR;
 using System;

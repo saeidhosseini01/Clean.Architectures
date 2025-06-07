@@ -1,6 +1,7 @@
-﻿using Clean.Architecture.Application.Queries;
-using Clean.Architecture.Application.Users;
+﻿
 using Clean.Architecture.Application.Users.Dtos;
+using Clean.Architecture.Application.Users.Queris;
+using Clean.Architecture.Application.Users.Query;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

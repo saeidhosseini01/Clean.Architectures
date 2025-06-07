@@ -13,7 +13,7 @@ using MediatR;
 
 
 
-namespace Clean.Architecture.Application.Users.
+namespace Clean.Architecture.Application.Users.Queris
 {
     public class GetUserByIdQuery : IRequest<UserDto>
     {
