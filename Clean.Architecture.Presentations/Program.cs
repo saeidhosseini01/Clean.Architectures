@@ -1,3 +1,4 @@
+using Clean.Architecture.Application.FluentValidator.User;
 using Clean.Architecture.Application.Handlers.QuerisHandler.User;
 using Clean.Architecture.Application.Mappings;
 using Clean.Architecture.Domain.Interfaces.Consts;
@@ -6,6 +7,7 @@ using Clean.Architecture.Infrastructure.Repositories.Consts;
 using Clean.Architecture.Infrastructure.Repositories.Users;
 using Clean.Architecture.Persistence.ApiDbContext;
 using Clean.Architecture.WebApi.EndPoint;
+using FluentValidation;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -75,6 +77,8 @@ void ConfigureServices(IServiceCollection services, IConfiguration configuration
                    .AllowAnyMethod();
         });
     });
+    services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
+    services.AddValidatorsFromAssemblyContaining<CreateUserValidator>();
     services.AddAuthentication("Bearer")
     .AddJwtBearer("Bearer", options =>
     {
