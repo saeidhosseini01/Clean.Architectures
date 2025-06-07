@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Clean.Architecture.Application.Users.Dtos;
-using Clean.Architecture.Application.Users.Query;
-using Clean.Architecture.Domain.Exeptions;
+using Clean.Architecture.Application.Users.Queris;
+
 using Clean.Architecture.Domain.Exeptions.NotFount;
 using Clean.Architecture.Domain.Interfaces.Users;
 using MediatR;

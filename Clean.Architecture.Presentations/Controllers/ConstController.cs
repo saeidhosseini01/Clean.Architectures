@@ -1,5 +1,5 @@
 ﻿using Clean.Architecture.Application.Dtos.Base;
-using Clean.Architecture.Application.Queries.Const;
+using Clean.Architecture.Application.UseCases.Consts.Queris;
 using Clean.Architecture.Domain.Entities.Common;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
