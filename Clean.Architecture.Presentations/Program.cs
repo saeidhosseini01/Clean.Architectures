@@ -3,12 +3,14 @@ using Clean.Architecture.Application.Users.Handlers.QueryHandler;
 using Clean.Architecture.Application.Users.Valodattions;
 using Clean.Architecture.Domain.Interfaces.Consts;
 using Clean.Architecture.Domain.Interfaces.Users;
+using Clean.Architecture.Infrastructure.BackGroundJob.Authentication;
 using Clean.Architecture.Infrastructure.Repositories.Consts;
 using Clean.Architecture.Infrastructure.Repositories.Users;
 using Clean.Architecture.Persistence.ApiDbContext;
 using Clean.Architecture.WebApi.EndPoint;
 using FluentValidation;
 using MediatR;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
@@ -79,24 +81,24 @@ void ConfigureServices(IServiceCollection services, IConfiguration configuration
     });
     services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
     services.AddValidatorsFromAssemblyContaining<CreateUserValidator>();
-    services.AddAuthentication("Bearer")
-    .AddJwtBearer("Bearer", options =>
-    {
-        options.TokenValidationParameters = new TokenValidationParameters
-        {
-            ValidateIssuer = true,
-            ValidateAudience = true,
-            ValidateLifetime = true,
-            ValidateIssuerSigningKey = true,
-            ValidIssuer = builder.Configuration["Jwt:Issuer"],
-            ValidAudience = builder.Configuration["Jwt:Audience"],
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
-        };
-    });
-    //services.AddSpaStaticFiles(configuration =>
-    //{
-    //    configuration.RootPath = "ClientApp/dist";
-    //});
+    builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+     .AddJwtBearer(options =>
+     {
+         var jwtSettings = builder.Configuration.GetSection("JwtSettings").Get<JwtSettings>();
+         options.TokenValidationParameters = new TokenValidationParameters
+         {
+             ValidateIssuer = true,
+             ValidateAudience = true,
+             ValidateLifetime = true,
+             ValidateIssuerSigningKey = true,
+             ValidIssuer = jwtSettings.Issuer,
+             ValidAudience = jwtSettings.Audience,
+             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings.Key))
+         };
+     });
+
+    builder.Services.AddAuthorization();
+
 
 
 
@@ -107,6 +109,8 @@ void ConfigureMiddleware(WebApplication app)
     app.UseStaticFiles();
     app.MapFallbackToFile("index.html");
     app.UseStatusCodePages();
+    app.UseAuthentication();
+    app.UseAuthorization();
     app.UseDeveloperExceptionPage();
     app.UseCors();
     app.UseSwagger();
