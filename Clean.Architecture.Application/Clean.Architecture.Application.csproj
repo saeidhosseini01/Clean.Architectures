@@ -16,6 +16,10 @@
     <Folder Include="Abstraction\Email\" />
     <Folder Include="Abstraction\Data\" />
     <Folder Include="Behaviors\" />
+    <Folder Include="UseCases\Auth\Handlers\" />
+    <Folder Include="UseCases\Auth\Dtos\" />
+    <Folder Include="UseCases\Auth\Queris\" />
+    <Folder Include="UseCases\Auth\Commands\" />
     <Folder Include="UseCases\Consts\Constants\" />
     <Folder Include="UseCases\Consts\Events\" />
     <Folder Include="UseCases\Consts\Validations\" />
