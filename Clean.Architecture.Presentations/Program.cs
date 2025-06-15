@@ -1,9 +1,11 @@
 using Clean.Architecture.Application.Mappings;
 using Clean.Architecture.Application.Users.Handlers.QueryHandler;
 using Clean.Architecture.Application.Users.Valodattions;
+using Clean.Architecture.Domain.Interfaces.Auth;
 using Clean.Architecture.Domain.Interfaces.Consts;
 using Clean.Architecture.Domain.Interfaces.Users;
 using Clean.Architecture.Infrastructure.BackGroundJob.Authentication;
+using Clean.Architecture.Infrastructure.Repositories.Auth;
 using Clean.Architecture.Infrastructure.Repositories.Consts;
 using Clean.Architecture.Infrastructure.Repositories.Users;
 using Clean.Architecture.Persistence.ApiDbContext;
@@ -46,6 +48,8 @@ void ConfigureServices(IServiceCollection services, IConfiguration configuration
     services.AddScoped<IUserRepository, UserRepository>();
     services.AddScoped<IConstTypeRepository, ConstTypeRepository>();
     services.AddScoped<IConstRepository, ConstRepository>();
+    services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
+    services.AddScoped<IJwtService, JwtService>();
     services.AddControllers()
     .AddJsonOptions(options =>
     {

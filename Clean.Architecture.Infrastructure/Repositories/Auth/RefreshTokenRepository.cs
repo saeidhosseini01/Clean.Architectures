@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Clean.Architecture.Infrastructure.Repositories.Auth
 {
-    internal class RefreshTokenRepository : IRefreshTokenRepository
+    public class RefreshTokenRepository : IRefreshTokenRepository
     {
         public Task AddAsync(RefreshToken refreshToken)
         {
