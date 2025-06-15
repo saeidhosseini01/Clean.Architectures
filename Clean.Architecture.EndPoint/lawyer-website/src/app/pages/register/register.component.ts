@@ -38,7 +38,7 @@ export class RegisterComponent  implements OnInit{
     });
   }
   ngOnInit(): void {
-  alert("sds");
+
   }
 
   onSubmit() {

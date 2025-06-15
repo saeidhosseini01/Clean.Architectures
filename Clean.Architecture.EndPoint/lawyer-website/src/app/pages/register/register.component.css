@@ -1,4 +1,12 @@
-/* بک‌گراند نیمه شفاف کل صفحه وقتی مودال بازه */
+:host {
+  display: block;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 10px;
+  font-family: 'Vazir', Tahoma, sans-serif;
+}
+
+/* بک‌گراند نیمه شفاف کل صفحه */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -28,7 +36,6 @@
   font-family: 'Vazir', Tahoma, sans-serif;
 }
 
-/* عنوان مودال */
 .modal-container h2 {
   margin-top: 0;
   margin-bottom: 1rem;
@@ -38,52 +45,44 @@
   color: #333;
 }
 
-/* استایل فرم داخل مودال */
 .register-form {
   width: 100%;
 }
 
-/* استایل دکمه‌ها */
-button[mat-flat-button] {
-  min-width: 100px;
+mat-form-field {
+  width: 100%;
+  margin-bottom: 1rem;
 }
 
-/* استایل دکمه انصراف */
-button[mat-stroked-button] {
-  min-width: 100px;
+mat-label {
+  font-weight: 500;
+  color: #555;
 }
 
-/* خطاها به رنگ قرمز */
 mat-error {
   font-size: 0.85rem;
   color: #d32f2f;
   direction: rtl;
 }
 
-/* اگر خواستی اسکرول مودال رو استایل بدی */
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 1.5rem;
+}
+
+button[mat-flat-button],
+button[mat-stroked-button] {
+  min-width: 100px;
+  font-weight: 500;
+}
+
+/* اسکرول‌بار مودال */
 .modal-container::-webkit-scrollbar {
   width: 6px;
 }
-
 .modal-container::-webkit-scrollbar-thumb {
   background-color: rgba(0,0,0,0.2);
   border-radius: 3px;
-}
-:host {
-  display: block;
-  padding: 1.5rem;
-  background-color: white;
-  border-radius: 10px;
-  font-family: 'Vazir', Tahoma, sans-serif;
-}
-
-h2 {
-  text-align: center;
-  font-size: 1.5rem;
-  color: #333;
-}
-
-button[mat-flat-button] {
-  min-width: 100px;
-  margin-right: 0.5rem;
 }
