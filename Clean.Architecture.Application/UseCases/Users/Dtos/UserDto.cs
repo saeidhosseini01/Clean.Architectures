@@ -16,14 +16,14 @@ namespace Clean.Architecture.Application.Users.Dtos
         public Guid Id { get; } = id;
 
         [JsonPropertyName("name")]
-        public string Name { get; } = name;
+        public Name Name { get; } = name;
 
 
         [JsonPropertyName("family")]
-        public string Family { get; } = family;
+        public Family Family { get; } = family;
 
 
         [JsonPropertyName("age")]
-        public double Age { get; } = age;
+        public Age Age { get; } = age;
     }
 }

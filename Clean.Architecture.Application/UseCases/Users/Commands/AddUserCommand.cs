@@ -18,7 +18,7 @@ namespace Clean.Architecture.Application.Users.Command
         public string Family { get; }
         public double Age { get; }
 
-        public AddUserCommand(Guid id, string name, string family, double age)
+        public AddUserCommand(Guid id, Name name, Family family, Age age)
         {
             Id = id;
             Name = name;

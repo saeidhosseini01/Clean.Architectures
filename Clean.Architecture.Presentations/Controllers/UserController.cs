@@ -1,7 +1,9 @@
 ﻿
+using Clean.Architecture.Application.Users.Command;
 using Clean.Architecture.Application.Users.Dtos;
 using Clean.Architecture.Application.Users.Queris;
 using Clean.Architecture.Application.Users.Query;
+using Clean.Architecture.Domain.Entities.User;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -39,6 +41,12 @@ namespace Clean.Architecture.Presentations.Controllers
         {
             var query = new GetUserByIdQuery(new Guid());
             var user=await mediator.Send(query, cancellationToken);
+            return Ok(user);
+        } 
+        public async Task<ActionResult<bool>> AddUser(UserDto userDto,CancellationToken cancellationToken)
+        {
+            var query = new AddUserCommand(userDto.Id,userDto.Name,userDto.Family,userDto.Age);
+            var user = await mediator.Send(query, cancellationToken);
             return Ok(user);
         }
      }

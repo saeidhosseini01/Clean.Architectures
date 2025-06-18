@@ -5,3 +5,7 @@ export interface TValue<T> {
   intData?: number;
   stringData?: string;
 }
+
+
+
+

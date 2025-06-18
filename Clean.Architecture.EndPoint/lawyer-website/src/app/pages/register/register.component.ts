@@ -43,6 +43,7 @@ export class RegisterComponent  implements OnInit{
 
   onSubmit() {
     if (this.Register.valid) {
+      alert("sdcsdc");
       this.dialogRef.close(this.Register.value); // ✅ بستن و ارسال دیتا
     } else {
       this.Register.markAllAsTouched(); // ✳️ نمایش ارورها
