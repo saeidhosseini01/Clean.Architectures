@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { UserDto } from "../../interface/UserDto";
+import { IUserDto } from "../../interface/UserDto";
 import { environment } from '../../../environment/environment';
 import { HttpClient } from '@angular/common/http';
 
@@ -20,8 +20,16 @@ export class UserService {
 
   constructor(private http: HttpClient) {}
 
-public addUser(entity: UserDto): Observable<boolean> {
-    const url = `${this.baseUrl}/User/AddUser?key=${entity}`;
+public addUser(entity: IUserDto): Observable<boolean> {
+  alert("add");
+    //const url = `${this.baseUrl}/User/AddUser?userDto=${entity}`;
+    const url = `${this.baseUrl}/User/AddUser`;
+    return this.http.get<boolean>(url);
+  }
+  public updateUser(entity: IUserDto): Observable<boolean> {
+  alert("update");
+    //const url = `${this.baseUrl}/User/UpdateUser?userDto=${entity}`;
+    const url = `${this.baseUrl}/User/UpdateUser`;
     return this.http.get<boolean>(url);
   }
 

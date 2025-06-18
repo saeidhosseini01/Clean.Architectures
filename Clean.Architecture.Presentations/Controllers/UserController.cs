@@ -37,17 +37,23 @@ namespace Clean.Architecture.Presentations.Controllers
             return Ok(user);
         }
         [HttpGet("GetById")]
-        public async Task<ActionResult<UserDto>> GetById( CancellationToken cancellationToken)
+        public async Task<ActionResult<UserDto>> GetById(Guid id, CancellationToken cancellationToken)
         {
-            var query = new GetUserByIdQuery(new Guid());
+            var query = new GetUserByIdQuery(id);
             var user=await mediator.Send(query, cancellationToken);
             return Ok(user);
-        } 
-        public async Task<ActionResult<bool>> AddUser(UserDto userDto,CancellationToken cancellationToken)
-        {
-            var query = new AddUserCommand(userDto.Id,userDto.Name,userDto.Family,userDto.Age);
-            var user = await mediator.Send(query, cancellationToken);
-            return Ok(user);
         }
-     }
+        [HttpGet("AddUser")]
+        //public async Task<ActionResult<bool>> AddUser(UserDto userDto,CancellationToken cancellationToken)
+        //{
+        //    var query = new AddUserCommand(userDto.Id,userDto.Name,userDto.Family,userDto.Age);
+        //    var user = await mediator.Send(query, cancellationToken);
+        //    return Ok(user);
+        //}
+        public async Task<ActionResult<bool>> AddUser()
+        {
+          
+            return Ok();
+        }
+    }
 }
