@@ -75,7 +75,7 @@ export class RegisterComponent implements OnInit {
         })
       }
     } else {
-      this.Register.markAllAsTouched(); // ✳️ نمایش ارورها
+      this.Register.markAllAsTouched(); 
     }
   }
 

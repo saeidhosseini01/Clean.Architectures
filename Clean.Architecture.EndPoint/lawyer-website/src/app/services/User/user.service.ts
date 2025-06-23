@@ -21,9 +21,9 @@ export class UserService {
   constructor(private http: HttpClient) {}
 
 public addUser(entity: IUserDto): Observable<boolean> {
-  alert("add");
-    //const url = `${this.baseUrl}/User/AddUser?userDto=${entity}`;
-    const url = `${this.baseUrl}/User/AddUser`;
+
+    const url = `${this.baseUrl}/User/AddUser?userDto=${entity}`;
+  
     return this.http.get<boolean>(url);
   }
   public updateUser(entity: IUserDto): Observable<boolean> {
